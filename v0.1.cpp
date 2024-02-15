@@ -5,32 +5,37 @@
 #include <string>
 using namespace std;
 
-struct {
+struct Studentas {
     string v;
     string p;
     double egz_rez;
-    int nd_sk;
-    double nd_rez[10];
+    int n;
+    double* nd_rez;
     double nd_sum = 0;
     double nd_vid;
     double rez;
     double mediana;
-} Duomenys[100];
+};
 
 int main() {
 
-    int n;
+    int m;
     string pasirinkimas;
 
+    // Studentu skaiciaus ivestis
+
     cout << "Iveskite studentu skaiciu" << endl;
-    while (!(cin >> n) || cin.peek() != '\n') {
+    while (!(cin >> m) || cin.peek() != '\n' || m <= 0) {
         cout << "Neteisinga ivestis, prasome ivesti skaiciu" << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
+
+    Studentas* Duomenys = new Studentas[m];
+
     // Vardo ivestis
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < m; i++) {
 
         cout << "Koks jusu vardas?" << endl;
         bool valid_v = true;
@@ -90,15 +95,17 @@ int main() {
         // Namu darbu skaiciaus ivestis
 
         cout << "Kiek namu darbu atlikote?" << endl;
-        while (!(cin >> Duomenys[i].nd_sk)) {
+        while (!(cin >> Duomenys[i].n) || Duomenys[i].n > 0) {
             cout << "Neteisinga ivestis, prasome ivesti skaiciu" << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
+        Duomenys[i].nd_rez = new double[Duomenys[i].n];
+
         // Namu darbu rezultatu ivedimas ir sumos skaiciavimas
 
-        for (int j = 0; j < Duomenys[i].nd_sk; j++) {
+        for (int j = 0; j < Duomenys[i].n; j++) {
             cout << "Koks buvo " << j + 1 << "-o namu darbo vertinimas?" << endl;
             while (!(cin >> Duomenys[i].nd_rez[j]) || Duomenys[i].nd_rez[j] <= 0 || Duomenys[i].nd_rez[j] > 10 || cin.peek() != '\n') {
                 cout << "Neteisinga ivestis, prasome ivesti skaiciu 10-baleje sistemoje" << endl;
@@ -111,15 +118,15 @@ int main() {
 
         // Namu darbu masyvo rusiavimas
 
-        sort(Duomenys[i].nd_rez, Duomenys[i].nd_rez + Duomenys[i].nd_sk);
+        sort(Duomenys[i].nd_rez, Duomenys[i].nd_rez + Duomenys[i].n);
 
         // Medianos skaiciavimas
 
-        if (Duomenys[i].nd_sk % 2 == 0) {
-            Duomenys[i].mediana = (Duomenys[i].nd_rez[Duomenys[i].nd_sk / 2 - 1] + Duomenys[i].nd_rez[Duomenys[i].nd_sk / 2]) / 2.0;
+        if (Duomenys[i].n % 2 == 0) {
+            Duomenys[i].mediana = (Duomenys[i].nd_rez[Duomenys[i].n / 2 - 1] + Duomenys[i].nd_rez[Duomenys[i].n / 2]) / 2.0;
         }
         else {
-            Duomenys[i].mediana = Duomenys[i].nd_rez[Duomenys[i].nd_sk / 2];
+            Duomenys[i].mediana = Duomenys[i].nd_rez[Duomenys[i].n / 2];
         }
     }
     
@@ -132,6 +139,7 @@ int main() {
     while (pasirinkimas != "Vid." && pasirinkimas != "Med.") {
         cout << "Pasirinkite arba 'Vid.' arba 'Med.'" << endl;
         cin >> pasirinkimas;
+    }
 
         if (pasirinkimas == "Vid.") {
             cout << left << setw(15) << "Pavarde" << setw(15) << "Vardas" << setw(15) << "Galutinis (Vid.)" << endl;
@@ -141,10 +149,10 @@ int main() {
             cout << left << setw(15) << "Pavarde" << setw(15) << "Vardas" << setw(15) << "Galutinis (Med.)" << endl;
             cout << "-----------------------------------------------" << endl;
         }
-    }
-    for (int i = 0; i < n; i++) {
+
+    for (int i = 0; i < m; i++) {
         if (pasirinkimas == "Vid.") {
-            Duomenys[i].nd_vid = Duomenys[i].nd_sum / Duomenys[i].nd_sk;
+            Duomenys[i].nd_vid = Duomenys[i].nd_sum / Duomenys[i].n;
             Duomenys[i].rez = 0.4 * Duomenys[i].nd_vid + 0.6 * Duomenys[i].egz_rez;
             cout << left << setw(15) << Duomenys[i].v << setw(15) << Duomenys[i].p << fixed << setprecision(2) << setw(15) << Duomenys[i].rez << endl;
         }
@@ -153,5 +161,11 @@ int main() {
             cout << left << setw(15) << Duomenys[i].v << setw(15) << Duomenys[i].p << fixed << setprecision(2) << setw(15) << Duomenys[i].rez << endl;
         }
     }
+
+    for (int i = 0; i < m; i++) {
+        delete[] Duomenys[i].nd_rez;
+    }
+    delete[] Duomenys;
+
     return 0;
 }
