@@ -253,14 +253,16 @@ string PasirinktiFaila() {
     cout << "Is kurio failo norit nuskaityti duomenis?" << endl;
     cout << endl;
     cout << "1 - 'kursiokai.txt'" << endl;
-    cout << "2 - 'studentai10000.txt'" << endl;
-    cout << "3 - 'studentai100000.txt'" << endl;
-    cout << "4 - 'studentai1000000.txt'" << endl;
+    cout << "2 - 'studentai1000.txt'" << endl;
+    cout << "3 - 'studentai10000.txt'" << endl;
+    cout << "4 - 'studentai100000.txt'" << endl;
+    cout << "5 - 'studentai1000000.txt'" << endl;
+    cout << "6 - 'studentai10000000.txt'" << endl;
     cout << endl;
     cout << "Iveskite pasirinkima: "; cin >> pasirinkimas;
     cout << endl;
-    while (cin.fail() || pasirinkimas <= 0 || pasirinkimas > 4) {
-        cout << "Neteisinga ivestis, prasome ivesti skaiciu nuo 1 iki 4" << endl;
+    while (cin.fail() || pasirinkimas <= 0 || pasirinkimas > 6) {
+        cout << "Neteisinga ivestis, prasome ivesti skaiciu nuo 1 iki 6" << endl;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cin >> pasirinkimas;
@@ -270,13 +272,19 @@ string PasirinktiFaila() {
         pavadinimas = "kursiokai.txt";
         break;
     case 2:
-        pavadinimas = "studentai10000.txt";
+        pavadinimas = "studentai1000.txt";
         break;
     case 3:
-        pavadinimas = "studentai100000.txt";
+        pavadinimas = "studentai10000.txt";
         break;
     case 4:
+        pavadinimas = "studentai100000.txt";
+        break;
+    case 5:
         pavadinimas = "studentai1000000.txt";
+        break;
+    case 6:
+        pavadinimas = "studentai10000000.txt";
         break;
     }
 
@@ -812,4 +820,78 @@ void RusiuotiGeraisBlogais(vector<Studentas>& Duomenys) {
     cout << "Rezultatai irasyti i failus Kietiakai.txt ir Nuskriaustukai.txt" << endl;
     system("pause");
     system("cls");
+}
+
+void Testavimas(vector<Studentas>& Duomenys) {
+    try {
+        Studentas studentas;
+        string line;
+        string pavadinimas;
+
+        high_resolution_clock::time_point pradzia1;
+        high_resolution_clock::time_point pabaiga1;
+        high_resolution_clock::time_point pradzia2;
+        high_resolution_clock::time_point pabaiga2;
+        high_resolution_clock::time_point pradzia3;
+        high_resolution_clock::time_point pabaiga3;
+
+        duration<double> trukme1;
+        duration<double> trukme2;
+        duration<double> trukme3;
+
+        pradzia1 = high_resolution_clock::now();
+        pavadinimas = PasirinktiFaila();
+        pradzia2 = high_resolution_clock::now();
+
+        ifstream infile(pavadinimas);
+        if (!infile) {
+            throw runtime_error("Nepavyko atidaryti failo. Bandykite dar karta.");
+        }
+
+        auto pradzia = high_resolution_clock::now();
+
+        getline(infile, line);
+
+        while (getline(infile, line)) {
+            istringstream iss(line);
+            iss >> studentas.v >> studentas.p;
+
+            double pazymys;
+            while (iss >> pazymys) {
+                if (pazymys <= 0 || pazymys > 10) {
+                    throw runtime_error("Neteisingas skaicius namu darbu rezultatuose.");
+                }
+                studentas.nd_rez.push_back(pazymys);
+            }
+            if (!studentas.nd_rez.empty()) {
+                studentas.egz_rez = studentas.nd_rez.back();
+                studentas.nd_rez.pop_back();
+            }
+            else {
+                throw runtime_error("Pasirinktas failas yra tuscias");
+            }
+
+            Duomenys.push_back(studentas);
+            studentas.nd_rez.clear();
+        }
+        infile.close();
+
+        pabaiga2 = high_resolution_clock::now();
+        trukme2 = duration_cast<duration<double>>(pabaiga2 - pradzia2);
+
+        pradzia3 = high_resolution_clock::now();
+        RusiuotiGeraisBlogais(Duomenys);
+        pabaiga3 = high_resolution_clock::now();
+        trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
+
+        pabaiga1 = high_resolution_clock::now();
+        trukme1 = duration_cast<duration<double>>(pabaiga1 - pradzia1);
+
+        cout << "Duomenu nuskaitymo is failo laikas: " << trukme2.count() << " sekundziu" << endl;
+        cout << "Surusiuotu studentu isvedimo i atskirus failus laikas: " << trukme3.count() << " sekundziu" << endl;
+        cout << "Visos programos veikimo laikas: " << trukme1.count() << " sekundziu" << endl;
+    }
+    catch (const exception& e) {
+        cerr << e.what() << endl;
+    }
 }

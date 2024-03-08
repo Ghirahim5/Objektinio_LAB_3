@@ -15,12 +15,14 @@ int main() {
     string pavadinimas;
 
     while (true) {
+        cout << endl;
         cout << "1 - Vesti duomenis rankiniu budu" << endl;
         cout << "2 - Generuoti pazymius" << endl;
         cout << "3 - Generuoti ir pazymius ir studentu vardus" << endl;
         cout << "4 - Generuoti studentu duomenu faila" << endl;
         cout << "5 - Nuskaityti duomenis is failo" << endl;
-        cout << "6 - Baigti darba" << endl;
+        cout << "6 - Testavimas" << endl;
+        cout << "7 - Baigti darba" << endl;
         cout << endl;
         cout << "Pasirinkite veiksma ivesdami skaiciu: ";
         cin >> veiksmas;
@@ -56,7 +58,11 @@ int main() {
 
         } break;
 
-        case 6:
+        case 6: {
+            Testavimas(Duomenys);
+            break;
+        } 
+        case 7:
             cout << "Programa baigia darba." << endl;
             return 0;
 

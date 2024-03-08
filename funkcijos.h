@@ -11,5 +11,6 @@ void RusiuotiSpausdinti(std::vector<Studentas>& Duomenys, double laikas, const s
 void RankinisIvedimas(std::vector<Studentas>& Duomenys);
 void GeneruotiFailus();
 void RusiuotiGeraisBlogais(std::vector<Studentas>& Duomenys);
+void Testavimas(std::vector<Studentas>& Duomenys);
 
 #endif
