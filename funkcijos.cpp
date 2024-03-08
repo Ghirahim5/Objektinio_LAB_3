@@ -133,7 +133,24 @@ void GeneruotiPazymius(vector<Studentas>& Duomenys) {
     system("cls");
 }
 
-void GeneruotiPazymiusVardus(int m3) {
+void GeneruotiPazymiusVardus() {
+    int m3;
+    while (true) {
+        try {
+            cout << "Iveskite studentu skaiciu: "; cin >> m3;
+            cout << endl;
+            if (cin.fail() || m3 <= 0) {
+                throw runtime_error("Neteisinga ivestis, prasome ivesti skaiciu");
+            }
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            break;
+        }
+        catch (const exception& e) {
+            cout << e.what() << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }
     vector<Studentas> Duomenys(m3);
 
     for (int i = 0; i < m3; i++) {
@@ -328,12 +345,30 @@ double Skaitymas(vector<Studentas>& Duomenys) {
             continue;
         }
     }
+
     system("pause");
     system("cls");
 }
 
 void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string& pavadinimas) {
     string pasirinkimas, pasirinkimas1, pasirinkimas2, pasirinkimas3;
+
+    cout << "Pagal ka norite rusiuoti rezultatus?" << endl;
+    cout << "1 - Varda" << endl;
+    cout << "2 - Pavarde" << endl;
+    cout << "3 - Bala" << endl;
+    cout << "4 - Kietiakais ir nuskriaustukais" << endl; // (studentai pagal vidurki rusiuojami i du atskirus failus Kietiakai - studentai su vidurkiu > 5 o nuskriaustukai - studentai su vidurkiu < 5)
+    cout << endl;
+    cout << "Iveskite pasirinkima: "; cin >> pasirinkimas3;
+    while (pasirinkimas3 != "1" && pasirinkimas3 != "2" && pasirinkimas3 != "3" && pasirinkimas3 != "4") {
+        cout << "Pasirinkite arba '1' arba '2' arba '3' arba '4'" << endl;
+        cin >> pasirinkimas3;
+    }
+    if (pasirinkimas3 == "4") {
+        RusiuotiGeraisBlogais(Duomenys);
+        return;
+    }
+    cout << endl;
     cout << "Kaip norite matyti savo galutini bala?" << endl;
     cout << "1 - Vid." << endl;
     cout << "2 - Med." << endl;
@@ -343,20 +378,8 @@ void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string
         cout << "Pasirinkite arba '1' arba '2'" << endl;
         cin >> pasirinkimas;
     }
-    cout << endl;
 
-    cout << "Pagal ka norite rusiuoti rezultatus?" << endl;
-    cout << "1 - Varda" << endl;
-    cout << "2 - Pavarde" << endl;
-    cout << "3 - Bala" << endl;
     cout << endl;
-    cout << "Iveskite pasirinkima: "; cin >> pasirinkimas3;
-    while (pasirinkimas3 != "1" && pasirinkimas3 != "2" && pasirinkimas3 != "3") {
-        cout << "Pasirinkite arba '1' arba '2' arba '3'" << endl;
-        cin >> pasirinkimas3;
-    }
-    cout << endl;
-
     cout << "Kokia tvarka norite rusiuoti rezultatus?" << endl;
     cout << "1 - Didejancia" << endl;
     cout << "2 - Mazejancia" << endl;
@@ -378,18 +401,6 @@ void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string
         cin >> pasirinkimas2;
     }
     cout << endl;
-
-
-    // Skaiciuojami galutiniai rezultatai
-    for (auto& studentas : Duomenys) {
-        if (pasirinkimas == "1") {
-            studentas.nd_vid = studentas.nd_sum / studentas.nd_rez.size();
-            studentas.rez = 0.4 * studentas.nd_vid + 0.6 * studentas.egz_rez;
-        }
-        else {
-            studentas.rez = 0.4 * studentas.mediana + 0.6 * studentas.egz_rez;
-        }
-    }
 
     // Rusiuojama pagal pasirinkta kriteriju
     if (pasirinkimas3 == "1") {
@@ -679,7 +690,7 @@ void GeneruotiFailus() {
 
     }
 
-    ofstream outfile(pasirinkimas);
+    ofstream outfile(pasirinkimas + ".txt");
     if (!outfile) {
         cerr << "Nepavyko sukurti rezultatu failo.";
         return;
@@ -699,6 +710,106 @@ void GeneruotiFailus() {
     }
     outfile.close();
     cout << "Rezultatai irasyti i faila: " << pasirinkimas << endl;
+    system("pause");
+    system("cls");
+}
+void RusiuotiGeraisBlogais(vector<Studentas>& Duomenys) {
+
+    vector<Studentas> Kietiakai;
+    vector<Studentas> Nuskriaustukai;
+
+    string pasirinkimas;
+    cout << "Kaip norite matyti savo galutini bala?" << endl;
+    cout << "1 - Vid." << endl;
+    cout << "2 - Med." << endl;
+    cout << endl;
+    try {
+        cout << "Iveskite pasirinkima: "; cin >> pasirinkimas;
+        cout << endl;
+
+        while (pasirinkimas != "1" && pasirinkimas != "2") {
+            cout << "Pasirinkite arba '1' arba '2'" << endl;
+            cin >> pasirinkimas;
+        }
+    }
+    catch (const exception& e) {
+        cerr << e.what() << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+
+    for (auto& studentas : Duomenys) {
+        if (pasirinkimas == "1") {
+            studentas.nd_vid = studentas.nd_sum / studentas.nd_rez.size();
+            studentas.rez = 0.4 * studentas.nd_vid + 0.6 * studentas.egz_rez;
+        }
+        else {
+            studentas.rez = 0.4 * studentas.mediana + 0.6 * studentas.egz_rez;
+        }
+    }
+
+    for (auto& studentas : Duomenys) {
+        if (studentas.rez >= 5) {
+            Kietiakai.push_back(studentas);
+        }
+        else {
+            Nuskriaustukai.push_back(studentas);
+        }
+    }
+
+    string pasirinkimas2;
+    cout << "Kaip norite rikiuoti rezultatus?" << endl;
+    cout << "1 - Didejimo tvarka." << endl;
+    cout << "2 - Mazejimo tvarka." << endl;
+    cout << endl;
+    try {
+        cout << "Iveskite pasirinkima: "; cin >> pasirinkimas2;
+        cout << endl;
+
+        while (pasirinkimas2 != "1" && pasirinkimas2 != "2") {
+            cout << "Pasirinkite arba '1' arba '2'" << endl;
+            cin >> pasirinkimas2;
+        }
+    }
+    catch (const exception& e) {
+        cerr << e.what() << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+
+    if (pasirinkimas2 == "1") {
+        sort(Kietiakai.begin(), Kietiakai.end(), [](const Studentas& a, const Studentas& b) { return a.rez < b.rez; });
+        sort(Nuskriaustukai.begin(), Nuskriaustukai.end(), [](const Studentas& a, const Studentas& b) { return a.rez < b.rez; });
+    }
+    else {
+        sort(Kietiakai.begin(), Kietiakai.end(), [](const Studentas& a, const Studentas& b) { return a.rez > b.rez; });
+        sort(Nuskriaustukai.begin(), Nuskriaustukai.end(), [](const Studentas& a, const Studentas& b) { return a.rez > b.rez; });
+    }
+
+    ofstream outfile1("Kietiakai.txt");
+    if (!outfile1) {
+        cerr << "Nepavyko sukurti rezultatu failo.";
+        return;
+    }
+    outfile1 << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(15) << "Galutinis (Vid.)" << endl;
+    outfile1 << "-----------------------------------------------" << endl;
+    for (const auto& studentas : Kietiakai) {
+        outfile1 << left << setw(15) << studentas.v << setw(15) << studentas.p << fixed << setprecision(2) << setw(15) << studentas.rez << endl;
+    }
+    outfile1.close();
+
+    ofstream outfile2("Nuskriaustukai.txt");
+    if (!outfile2) {
+        cerr << "Nepavyko sukurti rezultatu failo.";
+        return;
+    }
+    outfile2 << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(15) << "Galutinis (Vid.)" << endl;
+    outfile2 << "-----------------------------------------------" << endl;
+    for (const auto& studentas : Nuskriaustukai) {
+        outfile2 << left << setw(15) << studentas.v << setw(15) << studentas.p << fixed << setprecision(2) << setw(15) << studentas.rez << endl;
+    }
+    outfile2.close();
+    cout << "Rezultatai irasyti i failus Kietiakai.txt ir Nuskriaustukai.txt" << endl;
     system("pause");
     system("cls");
 }

@@ -37,24 +37,7 @@ int main() {
             break;
 
         case 3:
-            int m3;
-            while (true) {
-                try {
-                    cout << "Iveskite studentu skaiciu: "; cin >> m3;
-                    cout << endl;
-                    if (cin.fail() || m3 <= 0) {
-                        throw runtime_error("Neteisinga ivestis, prasome ivesti skaiciu");
-                    }
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    GeneruotiPazymiusVardus(m3);
-                    break;
-                }
-                catch (const exception& e) {
-                    cout << e.what() << endl;
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                }
-            }
+            GeneruotiPazymiusVardus();
             break;
 
         case 4:
