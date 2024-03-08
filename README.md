@@ -99,16 +99,21 @@ Ona Onaitytė 5 6 8 4 8
 Tyrimo rezultatai
 
 studentai1000
+
 <img width="515" alt="studentai1000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/79144384-3236-4f69-8ff6-3fe57018c2bb">
 
 studentai10000
+
 <img width="515" alt="studentai10000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/e07167f9-c96d-4dd5-8938-a76eec13a50d">
 
 studentai100000
+
 <img width="515" alt="studentai100000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/55feaaad-d2dc-4d36-8412-51aefe715262">
 
 studentai1000000
-s<img width="514" alt="studentai1000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/fc80a26a-975b-4f12-9ef1-19923efe4536">
+
+<img width="514" alt="studentai1000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/fc80a26a-975b-4f12-9ef1-19923efe4536">
 
 studentai10000000
+
 <img width="517" alt="studentai10000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/75c09d95-bb9b-4d48-9535-67bdec49a656">
