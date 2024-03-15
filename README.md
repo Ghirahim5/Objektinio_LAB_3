@@ -100,20 +100,21 @@ Tyrimo rezultatai
 
 studentai1000
 
-<img width="515" alt="studentai1000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/79144384-3236-4f69-8ff6-3fe57018c2bb">
+<img width="536" alt="studentai1000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/4736e07c-9653-4432-b7af-765db4e05134">
 
 studentai10000
 
-<img width="515" alt="studentai10000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/e07167f9-c96d-4dd5-8938-a76eec13a50d">
+<img width="527" alt="studentai10000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/f7336a4f-fe8a-41ed-8f1c-e01a118795e5">
 
 studentai100000
 
-<img width="515" alt="studentai100000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/55feaaad-d2dc-4d36-8412-51aefe715262">
+<img width="534" alt="studentai100000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/3e6bf655-fbc3-44fc-b16b-105b70850b76">
 
 studentai1000000
 
-<img width="514" alt="studentai1000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/fc80a26a-975b-4f12-9ef1-19923efe4536">
+<img width="533" alt="studentai1000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/fc83574e-732a-4b4c-9d1e-ea0d6d5fbac7">
 
 studentai10000000
 
-<img width="517" alt="studentai10000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/75c09d95-bb9b-4d48-9535-67bdec49a656">
+<img width="536" alt="studentai10000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/28d93539-c568-427e-ad70-21a10183c206">
+
