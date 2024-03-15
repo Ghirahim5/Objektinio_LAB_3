@@ -827,6 +827,7 @@ void Testavimas(vector<Studentas>& Duomenys) {
         Studentas studentas;
         string line;
         string pavadinimas;
+        string pasirinkimas, pasirinkimas2;
 
         high_resolution_clock::time_point pradzia1;
         high_resolution_clock::time_point pabaiga1;
@@ -834,13 +835,58 @@ void Testavimas(vector<Studentas>& Duomenys) {
         high_resolution_clock::time_point pabaiga2;
         high_resolution_clock::time_point pradzia3;
         high_resolution_clock::time_point pabaiga3;
+        high_resolution_clock::time_point pradzia4;
+        high_resolution_clock::time_point pabaiga4;
+        high_resolution_clock::time_point pradzia5;
+        high_resolution_clock::time_point pabaiga5;
 
         duration<double> trukme1;
         duration<double> trukme2;
         duration<double> trukme3;
+        duration<double> trukme4;
+        duration<double> trukme5;
+
+        pavadinimas = PasirinktiFaila();
+
+        cout << "Kaip norite matyti savo galutini bala?" << endl;
+        cout << "1 - Vid." << endl;
+        cout << "2 - Med." << endl;
+        cout << endl;
+        try {
+            cout << "Iveskite pasirinkima: "; cin >> pasirinkimas;
+            cout << endl;
+
+            while (pasirinkimas != "1" && pasirinkimas != "2") {
+                cout << "Pasirinkite arba '1' arba '2'" << endl;
+                cin >> pasirinkimas;
+            }
+        }
+        catch (const exception& e) {
+            cerr << e.what() << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+
+        cout << "Kaip norite rikiuoti rezultatus?" << endl;
+        cout << "1 - Didejimo tvarka." << endl;
+        cout << "2 - Mazejimo tvarka." << endl;
+        cout << endl;
+        try {
+            cout << "Iveskite pasirinkima: "; cin >> pasirinkimas2;
+            cout << endl;
+
+            while (pasirinkimas2 != "1" && pasirinkimas2 != "2") {
+                cout << "Pasirinkite arba '1' arba '2'" << endl;
+                cin >> pasirinkimas2;
+            }
+        }
+        catch (const exception& e) {
+            cerr << e.what() << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
 
         pradzia1 = high_resolution_clock::now();
-        pavadinimas = PasirinktiFaila();
         pradzia2 = high_resolution_clock::now();
 
         ifstream infile(pavadinimas);
@@ -879,16 +925,82 @@ void Testavimas(vector<Studentas>& Duomenys) {
         pabaiga2 = high_resolution_clock::now();
         trukme2 = duration_cast<duration<double>>(pabaiga2 - pradzia2);
 
+        vector<Studentas> Kietiakai;
+        vector<Studentas> Nuskriaustukai;
+
+        for (auto& studentas : Duomenys) {
+            if (pasirinkimas == "1") {
+                studentas.nd_vid = studentas.nd_sum / studentas.nd_rez.size();
+                studentas.rez = 0.4 * studentas.nd_vid + 0.6 * studentas.egz_rez;
+            }
+            else {
+                studentas.rez = 0.4 * studentas.mediana + 0.6 * studentas.egz_rez;
+            }
+        }
         pradzia3 = high_resolution_clock::now();
-        RusiuotiGeraisBlogais(Duomenys);
+
+        for (auto& studentas : Duomenys) {
+            if (studentas.rez >= 5) {
+                Kietiakai.push_back(studentas);
+            }
+            else {
+                Nuskriaustukai.push_back(studentas);
+            }
+        }
+
         pabaiga3 = high_resolution_clock::now();
         trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
+
+        pradzia4 = high_resolution_clock::now();
+
+        if (pasirinkimas2 == "1") {
+            sort(Kietiakai.begin(), Kietiakai.end(), [](const Studentas& a, const Studentas& b) { return a.rez < b.rez; });
+            sort(Nuskriaustukai.begin(), Nuskriaustukai.end(), [](const Studentas& a, const Studentas& b) { return a.rez < b.rez; });
+        }
+        else {
+            sort(Kietiakai.begin(), Kietiakai.end(), [](const Studentas& a, const Studentas& b) { return a.rez > b.rez; });
+            sort(Nuskriaustukai.begin(), Nuskriaustukai.end(), [](const Studentas& a, const Studentas& b) { return a.rez > b.rez; });
+        }
+
+        pabaiga4 = high_resolution_clock::now();
+        trukme4 = duration_cast<duration<double>>(pabaiga4 - pradzia4);
+
+        pradzia5 = high_resolution_clock::now();
+
+        ofstream outfile1("Kietiakai.txt");
+        if (!outfile1) {
+            cerr << "Nepavyko sukurti rezultatu failo.";
+            return;
+        }
+        outfile1 << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(15) << "Galutinis (Vid.)" << endl;
+        outfile1 << "-----------------------------------------------" << endl;
+        for (const auto& studentas : Kietiakai) {
+            outfile1 << left << setw(15) << studentas.v << setw(15) << studentas.p << fixed << setprecision(2) << setw(15) << studentas.rez << endl;
+        }
+        outfile1.close();
+
+        ofstream outfile2("Nuskriaustukai.txt");
+        if (!outfile2) {
+            cerr << "Nepavyko sukurti rezultatu failo.";
+            return;
+        }
+        outfile2 << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(15) << "Galutinis (Vid.)" << endl;
+        outfile2 << "-----------------------------------------------" << endl;
+        for (const auto& studentas : Nuskriaustukai) {
+            outfile2 << left << setw(15) << studentas.v << setw(15) << studentas.p << fixed << setprecision(2) << setw(15) << studentas.rez << endl;
+        }
+        outfile2.close();
+
+        pabaiga5 = high_resolution_clock::now();
+        trukme5 = duration_cast<duration<double>>(pabaiga5 - pradzia5);
 
         pabaiga1 = high_resolution_clock::now();
         trukme1 = duration_cast<duration<double>>(pabaiga1 - pradzia1);
 
         cout << "Duomenu nuskaitymo is failo laikas: " << trukme2.count() << " sekundziu" << endl;
-        cout << "Surusiuotu studentu isvedimo i atskirus failus laikas: " << trukme3.count() << " sekundziu" << endl;
+        cout << "Studentu rusiavimo i atskirus vektorius laikas: " << trukme3.count() << " sekundziu" << endl;
+        cout << "Studentu rikiavimo didejimo arba mazejimo tvarka laikas: " << trukme4.count() << " sekundziu" << endl;
+        cout << "Studentu irasymo i atskirus failus laikas: " << trukme5.count() << " sekundziu" << endl;
         cout << "Visos programos veikimo laikas: " << trukme1.count() << " sekundziu" << endl;
     }
     catch (const exception& e) {
