@@ -268,6 +268,13 @@ Deque 2 strategijos rezultatai
 
 Rezultatų su 1000000 ir 10000000 dydžio failais nėra, nes programa per ilgai veikia (virš 10 min)
 
+Tyrimo išvados:
+
+Efektyviausias metodas tai realizacija naudojanti Vektorių trečiąją strategiją.
+Antras efektyviausias metodas tai realizacija naudojanti Vektorių pirmąją strategiją.
+Trečias efektyviausias metodas tai realizacija naudojanti Listų antrąją strategiją.
+Deque ir Vektorių realizacijos naudojančios antrąją strategiją yra labai neefektyvios ir jų neapsimoka naudoti.
+
 ### INSTALIACIJOS INSTRUKCIJOS ###
 
 Pirma reikia pasirinkti vieną iš trijų versijų - Deque, List arba Vector ir atsisiųsti visus failus esančius pasirinktame aplanke.
@@ -291,3 +298,45 @@ PVZ:
 
 Toliau arba atsisiųskite duomenų failus arba juos sugeneruokite naudodamiesi programoje realizuota funkcija.
 
+### RELEASE'Ų INFORMACIJA ###
+
+Pirmasis subrelease:
+
+1. Programa, naudotojui įvedus informaciją, duoda pasirinkimą kaip naudotojas nori, jog jo vidurkis būtų apskaičiuojamas - tradiciniu būdu ar medianos metodu.
+2. Ekrane "atspausdinama" lentelė, kuri pateikia informaciją apie naudotoją - Vardą, pavardę ir vidurkį.
+
+v0.1
+
+1. Programoje realizuotas meniu kuris vartotojui pateikia keturias galimybes: 1- Įvesti duomenis rankiniu būdu 2 - Generuoti pažymius 3 - Generuoti pažymius ir vardus 4 - Baigti darbą.
+2. Yra dvi realizuotos programos versijos - viena kuri veikia tik su c masyvais, o kita - su vektoriais.
+3. Programoje yra neteisingos įvesties apsauga.
+4. Vartotojas gali pasirinkti kaip nori matyti savo galutinį pažymį - mediana arba tradiciniu vidurkio būdu.
+
+v0.2
+
+1. Pakeičiau duomenų įvedimą į pilnai dinaminį.
+2. Pridėjau galimybę nuskaityti duomenis iš failo.
+3. Pridėjau galimybę pasirinkti kokį failą norima atidaryti ir apdoroti.
+4. Pridėjau galimybę rūšiuoti duomenis pagal skirtingus kriterijus - vardą, pavardę ir galutinį balą.
+
+v0.3
+
+1. Įgyvendintas išimčių valdymas įvairiose programos vietose: visi vartotojo pasirinkimai tikrinami pagal atitinkamus reikalavimus, taip pat tikrinama ar pasirinktas duomenų failas egzistuoja ir ar jis nėra tuščias.
+2. Pakeistas duomenų failo pasirinkimo metodas. Sukurta nauja funkcija kuri yra atsakinga už failo pasirinkimą.
+3. Visi pasirinkimai dabar yra pateikiami lentelės forma.
+4. Įvykdytas programos reorganizavimas: sukurti atskiri v0.3_main.cpp ir funkcijos.cpp failai ir nauji studentas.h ir funkcijos.h header failai.
+
+v0.4
+
+1. Sukurta nauja generavimo funkcija kuri sugeneruoja pasirinkto dydžio šabloninį studentų duomenų failą.
+2. Sukurta nauja funkcija kuri rūšiuoja studentus pagal jų galutinį pažymį (jeigu pažymys žemesnis už 5 tada studentas priskiriamas prie nuskriaustukų, jeigu didesnis - prie kietiakų)
+3. Sukurta nauja testavimo funkcija kuri atlieka įvairius testus su pasirinktu failu.
+4. Sukurtas išsamus README.md failas kuriame yra įkeltos testavimo atvejų rezultatų nuotraukos
+
+v1.0
+
+1. Sukurtos trys skirtingos realizacijos: su vektoriais, listais ir deque.
+2. Kiekvienai realizacijai taip pat buvo įgyvendintos bent 2 strategijos, o vektorių versijai - 3.
+3. Sukurtas CMakeList.txt failas
+4. Aptvarkyta repozitorija.
+5. Papildytas README.md failas
