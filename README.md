@@ -119,7 +119,6 @@ studentai10000000
 <img width="535" alt="studentai10000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/fe55d02c-ea62-46b9-b66a-c000c0eede2e">
 
 
-
 Vektorių 1 strategijos rezultatai
 
 1000
@@ -268,5 +267,15 @@ Deque 2 strategijos rezultatai
 
 Rezultatų su 1000000 ir 10000000 dydžio failais nėra, nes programa per ilgai veikia (virš 10 min)
 
+//___INSTALIACIJOS INSTRUKCIJOS___\\
 
+Pirma reikia pasirinkti vieną iš trijų versijų - Deque, List arba Vector ir atsisiųsti visus failus esančius pasirinktame aplanke.
 
+Pasirinktoje versijoje reikia pasirinkti vieną iš dviejų realizuotų strategijų: 1pavadinimas_funkcijos.cpp arba 2pavadinimas_funkcijos.cpp
+(Pasirinkimas tai atsiuntimas vieno arba kito failo BET NE ABIEJŲ!)
+
+Tada sekite šio video instrukcijas norint sukurti .exe failą:
+
+https://www.youtube.com/watch?v=ccDPSF4V2N8
+
+Atlikus nurodytus žingsnius šiame video reikia pakoreguoti CMakeList.txt failą priklausomai nuo to kurią strategiją norima naudoti 1 ar 2.
