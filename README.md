@@ -29,6 +29,7 @@ RankinisIvedimas: Ši funkcija leidžia vartotojui rankiniu būdu įvesti studen
 RusiuotiSpausdinti: Ši funkcija rūšiuoja ir spausdina rezultatų lentelę.
 PasirinktiFaila: Ši funkcija leidžia vartotojui pasirinkti failą iš pateikto sąrašo.
 RusiuotiGeraisBlogais: Ši funkcija rūšiuoja studentus pagal vidurkį į du atskirus failus: "Kietiakai" (studentai su vidurkiu > 5) ir "Nuskriaustukai" (studentai su vidurkiu < 5).
+
 Papildomos funkcijos:
 
 Galimybė apskaičiuoti ir parodyti medianą vietoj vidurkio.
@@ -267,15 +268,26 @@ Deque 2 strategijos rezultatai
 
 Rezultatų su 1000000 ir 10000000 dydžio failais nėra, nes programa per ilgai veikia (virš 10 min)
 
-//___INSTALIACIJOS INSTRUKCIJOS___\\
+### INSTALIACIJOS INSTRUKCIJOS ###
 
 Pirma reikia pasirinkti vieną iš trijų versijų - Deque, List arba Vector ir atsisiųsti visus failus esančius pasirinktame aplanke.
 
 Pasirinktoje versijoje reikia pasirinkti vieną iš dviejų realizuotų strategijų: 1pavadinimas_funkcijos.cpp arba 2pavadinimas_funkcijos.cpp
-(Pasirinkimas tai atsiuntimas vieno arba kito failo BET NE ABIEJŲ!)
+(Pasirinkimas tai atsisiuntimas vieno arba kito failo BET NE ABIEJŲ!)
 
 Tada sekite šio video instrukcijas norint sukurti .exe failą:
 
 https://www.youtube.com/watch?v=ccDPSF4V2N8
 
 Atlikus nurodytus žingsnius šiame video reikia pakoreguoti CMakeList.txt failą priklausomai nuo to kurią strategiją norima naudoti 1 ar 2.
+
+- Jeigu norite naudoti 1 strategiją, tuomet atsisiųskite failą: 1pavadinimas_funkcijos.cpp ir CMakeList.txt failo nekeiskite. -
+
+- Jeigu norite naudoti 2 strategiją, tuomet atsisiųskite failą: 2pavadinimas_funkcijos.cpp ir CMakeList.txt faile prie Source failų pakeiskite pavadinimą iš 1pavadinimas_funkcijos.cpp į 2pavadinimas_funkcijos.cpp -
+
+PVZ:
+
+<img width="317" alt="Ekrano kopija 2024-03-17 192741" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/c4377823-16fb-47d4-b527-2334e7733936">
+
+Toliau arba atsisiųskite duomenų failus arba juos sugeneruokite naudodamiesi programoje realizuota funkcija.
+
