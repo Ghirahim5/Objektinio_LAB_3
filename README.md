@@ -119,6 +119,7 @@ studentai10000000
 <img width="535" alt="studentai10000000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/fe55d02c-ea62-46b9-b66a-c000c0eede2e">
 
 
+
 Vektorių 1 strategijos rezultatai
 
 1000
