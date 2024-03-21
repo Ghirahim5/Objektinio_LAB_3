@@ -897,20 +897,6 @@ list<double> Testavimas(list<Studentas>& Duomenys) {
                 studentas.rez = 0.4 * studentas.mediana + 0.6 * studentas.egz_rez;
             }
         }
-        pradzia3 = high_resolution_clock::now();
-
-        for (auto it = Duomenys.begin(); it != Duomenys.end(); ) {
-            if (it->rez < 5) {
-                Nuskriaustukai.push_back(*it);
-                it = Duomenys.erase(it);
-            }
-            else {
-                ++it;
-            }
-        }
-
-        pabaiga3 = high_resolution_clock::now();
-        trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
 
         pradzia4 = high_resolution_clock::now();
 
@@ -925,6 +911,21 @@ list<double> Testavimas(list<Studentas>& Duomenys) {
 
         pabaiga4 = high_resolution_clock::now();
         trukme4 = duration_cast<duration<double>>(pabaiga4 - pradzia4);
+
+        pradzia3 = high_resolution_clock::now();
+
+        for (auto it = Duomenys.begin(); it != Duomenys.end(); ) {
+            if (it->rez < 5) {
+                Nuskriaustukai.push_back(*it);
+                it = Duomenys.erase(it);
+            }
+            else {
+                ++it;
+            }
+        }
+
+        pabaiga3 = high_resolution_clock::now();
+        trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
 
         pradzia5 = high_resolution_clock::now();
 
@@ -958,11 +959,11 @@ list<double> Testavimas(list<Studentas>& Duomenys) {
         pabaiga1 = high_resolution_clock::now();
         trukme1 = duration_cast<duration<double>>(pabaiga1 - pradzia1);
 
-        cout << "Duomenu nuskaitymo is failo laikas: " << trukme2.count() << " sekundziu" << endl;
-        cout << "Studentu rusiavimo i atskirus list'us laikas: " << trukme3.count() << " sekundziu" << endl;
-        cout << "Studentu rikiavimo didejimo arba mazejimo tvarka laikas: " << trukme4.count() << " sekundziu" << endl;
-        //cout << "Studentu irasymo i atskirus failus laikas: " << trukme5.count() << " sekundziu" << endl;
-        cout << "Visos programos veikimo laikas: " << trukme1.count() << " sekundziu" << endl;
+        cout << "Duomenu nuskaitymo is failo laikas: " << fixed << setprecision(2) << trukme2.count() << " sekundziu" << endl;
+        cout << "Studentu rusiavimo i atskirus list'us laikas: " << fixed << setprecision(2) << trukme3.count() << " sekundziu" << endl;
+        cout << "Studentu rikiavimo didejimo arba mazejimo tvarka laikas: " << fixed << setprecision(2) << trukme4.count() << " sekundziu" << endl;
+        //cout << "Studentu irasymo i atskirus failus laikas: " << fixed << setprecision(2) << trukme5.count() << " sekundziu" << endl;
+        cout << "Visos programos veikimo laikas: " << fixed << setprecision(2) << trukme1.count() << " sekundziu" << endl;
         cout << endl;
 
         list<double> trukme_counts;
