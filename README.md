@@ -289,7 +289,6 @@ Tyrimo išvados:
 Efektyviausias metodas tai realizacija naudojanti Vektorių trečiąją strategiją.
 Antras efektyviausias metodas tai realizacija naudojanti Vektorių pirmąją strategiją.
 Trečias efektyviausias metodas tai realizacija naudojanti Listų antrąją strategiją.
-Deque ir Vektorių realizacijos naudojančios antrąją strategiją yra labai neefektyvios ir jų neapsimoka naudoti.
 
 ### INSTALIACIJOS INSTRUKCIJOS ###
 
