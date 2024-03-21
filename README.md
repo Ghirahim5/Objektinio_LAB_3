@@ -99,6 +99,12 @@ Ona Onaitytė 5 6 8 4 8
 
 Tyrimo rezultatai
 
+KOMPIUTERIO SPECIFIKACIJOS:
+
+CPU: I7 - 12700H
+RAM: 16gb SODIMM 4800 Mhz
+GPU: RTX 3060 (mobile)
+
 studentai1000
 
 <img width="539" alt="studentai1000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/a2ac3659-290c-4953-bc8c-7db9d08f0d87">
@@ -147,41 +153,45 @@ Vektorių 2 strategijos rezultatai
 
 1000
 
-<img width="509" alt="2vektoriai1k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/c6a8b6d8-f9fb-4d72-8c05-90f3c3b5d8f8">
+<img width="505" alt="2vektoriai1k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/53664d61-c4b2-4b76-b192-a60b95d2ec68">
 
 10000
 
-<img width="539" alt="2vektoriai10k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/d5a0042d-d76f-4255-af51-48b8bd887e4f">
+<img width="503" alt="2vektoriai10k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/9f26a3cd-ec8b-4070-9c9f-d8f999922a64">
 
 100000
 
-<img width="538" alt="2vektoriai100k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/7c931d90-8b05-4570-b2e6-8304d534ab14">
+<img width="505" alt="2vektoriai100k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/ce02d483-9678-400f-b037-3f80de282ca0">
 
-Rezultatų su 1000000 ir 10000000 dydžio failais nėra, nes programa per ilgai veikia (virš 10 min)
+1000000
 
+<img width="504" alt="2vektoriai1000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/c3ca46f0-ac4b-479b-9367-ca44c58bc868">
+
+10000000
+
+<img width="502" alt="2vektoriai10000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/7b290f42-7ff5-4281-92e3-4ead743068ec">
 
 Vektorių 3 strategijos rezultatai
 
 1000
 
-<img width="535" alt="3vektoriai1k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/61f26915-622e-432b-bb7a-c9f82e190e09">
+<img width="510" alt="3vektoriai1k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/08590569-2483-4864-bcde-5b2dcc0dad4d">
 
 10000
 
-<img width="539" alt="3vektoriai10k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/70595890-17ae-4ca9-85ba-55cc25fe39f7">
+<img width="506" alt="3vektoriai10k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/453d19bc-6e50-4a1a-b274-71f2b49944d7">
 
 100000
 
-<img width="540" alt="3vektoriai100k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/dda54e17-7615-42e8-a137-ebb4fba17081">
+<img width="505" alt="3vektoriai100k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/410530ad-0921-47fa-86fb-290b1fe600f2">
 
 1000000
 
-<img width="542" alt="3vektoriai1000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/4bbd5f61-3968-49be-9d74-9f0b34bc2171">
+<img width="505" alt="3vektoriai1000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/dc6c718d-258d-4519-9f7a-086ab7ad6520">
 
 10000000
 
-<img width="533" alt="3vektoriai10000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/d2c7fc30-86da-4f78-aa9c-eeb7ac430749">
-
+<img width="508" alt="3vektoriai10000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/170776b8-6226-4a46-9704-ab03f37c3f01">
 
 List 1 strategijos rezultatai
 
@@ -256,17 +266,23 @@ Deque 2 strategijos rezultatai
 
 1000
 
-<img width="531" alt="2deque1k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/73d4217a-7d4f-4a37-b8fc-58d94a4f4798">
+<img width="541" alt="2deque1k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/40df0406-311a-4e90-b3de-c214ae896868">
 
 10000
 
-<img width="539" alt="2deque10k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/b12644f1-4e8a-4b6a-972b-fd19bffb6b3c">
+<img width="541" alt="2deque10k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/1281fcd5-a690-4af8-9937-6e346b288e5c">
 
 100000
 
-<img width="533" alt="2deque100k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/fe2ee6c4-eeac-4bc6-9ff6-f756db71e87c">
+<img width="540" alt="2deque100k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/ff7e6b79-61b1-45db-8d55-82615b467102">
 
-Rezultatų su 1000000 ir 10000000 dydžio failais nėra, nes programa per ilgai veikia (virš 10 min)
+1000000
+
+<img width="532" alt="2deque1000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/b444e59f-2e56-44ff-9a14-2d8657c2a528">
+
+10000000
+
+<img width="527" alt="2deque10000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/7a6ffe30-b85f-4ab4-8ea8-6ad0c4945fe0">
 
 Tyrimo išvados:
 
