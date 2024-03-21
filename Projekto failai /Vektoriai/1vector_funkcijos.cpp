@@ -835,6 +835,9 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
         duration<double> trukme4;
         duration<double> trukme5;
 
+        vector<Studentas> Kietiakai;
+        vector<Studentas> Nuskriaustukai;
+
         pavadinimas = PasirinktiFaila();
 
         cout << "Kaip norite matyti savo galutini bala?" << endl;
@@ -923,22 +926,6 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
                 studentas.rez = 0.4 * studentas.mediana + 0.6 * studentas.egz_rez;
             }
         }
-        pradzia3 = high_resolution_clock::now();
-
-            partition(Duomenys.begin(), Duomenys.end(), [](const Studentas& studentas) {
-                return studentas.rez >= 5;
-            });
-            auto partitionPoint = find_if(Duomenys.begin(), Duomenys.end(), [](const Studentas& studentas) {
-                return studentas.rez < 5;
-            });
-            vector<Studentas> Kietiakai(Duomenys.begin(), partitionPoint);
-            vector<Studentas> Nuskriaustukai(partitionPoint, Duomenys.end());
-
-        Duomenys.clear();
-        Duomenys.shrink_to_fit();
-
-        pabaiga3 = high_resolution_clock::now();
-        trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
 
         pradzia4 = high_resolution_clock::now();
 
@@ -953,6 +940,20 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
 
         pabaiga4 = high_resolution_clock::now();
         trukme4 = duration_cast<duration<double>>(pabaiga4 - pradzia4);
+
+        pradzia3 = high_resolution_clock::now();
+
+        auto partitionPoint = partition(Duomenys.begin(), Duomenys.end(), [](const Studentas& studentas) {
+            return studentas.rez >= 5;
+        });
+        Kietiakai.assign(Duomenys.begin(), partitionPoint);
+        Nuskriaustukai.assign(partitionPoint, Duomenys.end());
+
+        Duomenys.clear();
+        Duomenys.shrink_to_fit();
+
+        pabaiga3 = high_resolution_clock::now();
+        trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
 
         pradzia5 = high_resolution_clock::now();
 
@@ -984,11 +985,11 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
         pabaiga1 = high_resolution_clock::now();
         trukme1 = duration_cast<duration<double>>(pabaiga1 - pradzia1);
 
-        cout << "Duomenu nuskaitymo is failo laikas: " << trukme2.count() << " sekundziu" << endl;
-        cout << "Studentu rusiavimo i atskirus vektorius laikas: " << trukme3.count() << " sekundziu" << endl;
-        cout << "Studentu rikiavimo didejimo arba mazejimo tvarka laikas: " << trukme4.count() << " sekundziu" << endl;
-        //cout << "Studentu irasymo i atskirus failus laikas: " << trukme5.count() << " sekundziu" << endl;
-        cout << "Visos programos veikimo laikas: " << trukme1.count() << " sekundziu" << endl;
+        cout << "Duomenu nuskaitymo is failo laikas: " << fixed << setprecision(2) << trukme2.count() << " sekundziu" << endl;
+        cout << "Studentu rusiavimo i atskirus vektorius laikas: " << fixed << setprecision(2) << trukme3.count() << " sekundziu" << endl;
+        cout << "Studentu rikiavimo didejimo arba mazejimo tvarka laikas: " << fixed << setprecision(2) << trukme4.count() << " sekundziu" << endl;
+        //cout << "Studentu irasymo i atskirus failus laikas: " << fixed << setprecision(2) << trukme5.count() << " sekundziu" << endl;
+        cout << "Visos programos veikimo laikas: " << fixed << setprecision(2) << trukme1.count() << " sekundziu" << endl;
         cout << endl;
 
         vector<double> trukme_counts;

@@ -76,11 +76,11 @@ int main() {
 
             vykdymu_skaicius_2++;
 
-            cout << "Duomenu nuskaitymo is failo laiku vidurkis: " << bendras_laikas_3 / vykdymu_skaicius_2 << " sekundziu" << endl;
-            cout << "Studentu rusiavimo i atskirus deques laiku vidurkis: " << bendras_laikas_4 / vykdymu_skaicius_2 << " sekundziu" << endl;
-            cout << "Studentu rikiavimo didejimo arba mazejimo tvarka laiku vidurkis: " << bendras_laikas_5 / vykdymu_skaicius_2 << " sekundziu" << endl;
-            //cout << "Studentu irasymo i atskirus failus laiku vidurkis: " << bendras_laikas_6/ vykdymu_skaicius_2 << " sekundziu" << endl;
-            cout << "Visos programos veikimo laiku vidurkis: " << bendras_laikas_2 / vykdymu_skaicius_2 << " sekundziu" << endl;
+            cout << "Duomenu nuskaitymo is failo laiku vidurkis: " << fixed << setprecision(2) << bendras_laikas_3 / vykdymu_skaicius_2 << " sekundziu" << endl;
+            cout << "Studentu rusiavimo i atskirus deques laiku vidurkis: " << fixed << setprecision(2) << bendras_laikas_4 / vykdymu_skaicius_2 << " sekundziu" << endl;
+            cout << "Studentu rikiavimo didejimo arba mazejimo tvarka laiku vidurkis: " << fixed << setprecision(2) << bendras_laikas_5 / vykdymu_skaicius_2 << " sekundziu" << endl;
+            //cout << "Studentu irasymo i atskirus failus laiku vidurkis: " << fixed << setprecision(2) << bendras_laikas_6/ vykdymu_skaicius_2 << " sekundziu" << endl;
+            cout << "Visos programos veikimo laiku vidurkis: " << fixed << setprecision(2) << bendras_laikas_2 / vykdymu_skaicius_2 << " sekundziu" << endl;
             cout << endl;
             break;
         }
