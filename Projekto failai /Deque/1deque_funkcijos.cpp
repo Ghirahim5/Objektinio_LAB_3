@@ -933,20 +933,6 @@ deque<double> Testavimas(deque<Studentas>& Duomenys) {
                 studentas.rez = 0.4 * studentas.mediana + 0.6 * studentas.egz_rez;
             }
         }
-        pradzia3 = high_resolution_clock::now();
-
-        for (auto& studentas : Duomenys) {
-            if (studentas.rez >= 5) {
-                Kietiakai.push_back(studentas);
-            }
-            else {
-                Nuskriaustukai.push_back(studentas);
-            }
-        }
-        Duomenys.clear();
-
-        pabaiga3 = high_resolution_clock::now();
-        trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
 
         pradzia4 = high_resolution_clock::now();
 
@@ -961,6 +947,21 @@ deque<double> Testavimas(deque<Studentas>& Duomenys) {
 
         pabaiga4 = high_resolution_clock::now();
         trukme4 = duration_cast<duration<double>>(pabaiga4 - pradzia4);
+
+        pradzia3 = high_resolution_clock::now();
+
+        for (auto& studentas : Duomenys) {
+            if (studentas.rez >= 5) {
+                Kietiakai.push_back(studentas);
+            }
+            else {
+                Nuskriaustukai.push_back(studentas);
+            }
+        }
+        Duomenys.clear();
+
+        pabaiga3 = high_resolution_clock::now();
+        trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
 
         pradzia5 = high_resolution_clock::now();
 
