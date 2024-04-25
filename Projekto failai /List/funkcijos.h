@@ -1,6 +1,7 @@
 #ifndef FUNKCIJOS_H
 #define FUNKCIJOS_H
 
+#include <list>
 #include "studentas.h"
 
 void GeneruotiPazymius(std::list<Studentas> & Duomenys);
