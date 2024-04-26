@@ -316,8 +316,10 @@ Nenaudojant optimizavimo "flag'ų"
 | Klasė   |        8,01 s.       |        82,75 s.      |       162        |
 | Strukt. |        7,53 s.       |        92,31 s.      |       139        |
 
-### RELEASE'Ų INFORMACIJA ###
-
+<details>
+<summary>### RELEASE'Ų INFORMACIJA ###</summary>
+<br>
+  
 Pirmasis subrelease:
 
 1. Programa, naudotojui įvedus informaciją, duoda pasirinkimą kaip naudotojas nori, jog jo vidurkis būtų apskaičiuojamas - tradiciniu būdu ar medianos metodu.
@@ -366,3 +368,5 @@ v1.1
 3. Realizuoti "set'eriai" ir "get'eriai"
 4. Atliktas eksperimentinis tyrimas naudojant skirtingus optimizavimo "falg'us" (O0, O1, O2, O3)
 5. Papildytas README.md failas
+
+</details>
