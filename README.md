@@ -21,11 +21,15 @@ Vartotojas galės rankiniu būdu įvesti studentų vardus, pavardes, namų darb�
 Galutinis balas bus apskaičiuojamas taip pat, kaip ir ankstesniuose variantuose.
 Rezultatai bus rodomi lentelėje su stulpeliais: Pavarde, Vardas, Galutinis (Vid.) arba Galutinis (Med.) (priklausomai nuo pasirinkimo).
 
+</details>
+
 <details>
 <summary>### Funkcijos ###</summary>
 <br>
 
-Pagrindinės funkcijos:
+<details>
+<summary>Pagrindinės funkcijos:</summary>
+<br>
 
 GeneruotiPazymius: Ši funkcija sugeneruoja atsitiktinius studentų duomenis ir apskaičiuoja galutinius balus.
 Skaitymas: Ši funkcija nuskaito duomenis iš pasirinkto failo ir apskaičiuoja galutinius balus.
@@ -33,8 +37,11 @@ RankinisIvedimas: Ši funkcija leidžia vartotojui rankiniu būdu įvesti studen
 RusiuotiSpausdinti: Ši funkcija rūšiuoja ir spausdina rezultatų lentelę.
 PasirinktiFaila: Ši funkcija leidžia vartotojui pasirinkti failą iš pateikto sąrašo.
 RusiuotiGeraisBlogais: Ši funkcija rūšiuoja studentus pagal vidurkį į du atskirus failus: "Kietiakai" (studentai su vidurkiu > 5) ir "Nuskriaustukai" (studentai su vidurkiu < 5).
+</details>
 
-Papildomos funkcijos:
+<details>
+<summary>Papildomos funkcijos:</summary>
+<br>
 
 Galimybė apskaičiuoti ir parodyti medianą vietoj vidurkio.
 
@@ -100,18 +107,23 @@ Pavyzdys:
 Petras Petraitis 7 8 9 10 7
 Ona Onaitytė 5 6 8 4 8
 
-<details>
+</details>
+</details>
 
-### KOMPIUTERIO SPECIFIKACIJOS: ###
+<details>
+<summary>### KOMPIUTERIO SPECIFIKACIJOS: ###</summary>
+<br>
 
 CPU: I7 - 12700H
 RAM: 16gb SODIMM 4800 Mhz
 GPU: RTX 3060 (mobile)
+SSD: Micron_3400 500GB (NVMe, PCIe Gen4)
+SSD: WD_BLACK SN750 SE 1TB (NVMe, PCIe Gen4)
 
+</details>
 <details>
 <summary>### TYRIMO REZULTATAI ###</summary>
 <br>
-
 
 studentai1000
 
@@ -292,15 +304,22 @@ Deque 2 strategijos rezultatai
 
 <img width="527" alt="2deque10000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/7a6ffe30-b85f-4ab4-8ea8-6ad0c4945fe0">
 
-</details>
 
-Tyrimo išvados:
 
+<details>
+<summary>Tyrimo išvados: </summary>
+<br>
+  
 Efektyviausias metodas tai realizacija naudojanti Vektorių trečiąją strategiją.
 Antras efektyviausias metodas tai realizacija naudojanti Vektorių pirmąją strategiją.
 Trečias efektyviausias metodas tai realizacija naudojanti Listų antrąją strategiją.
 
-### INSTALIACIJOS INSTRUKCIJOS ###
+</details>
+</details>
+
+<details>
+<summary>### INSTALIACIJOS INSTRUKCIJOS ###</summary>
+<br>
 
 Pirma reikia pasirinkti vieną iš trijų versijų - Deque, List arba Vector ir atsisiųsti visus failus esančius pasirinktame aplanke.
 
@@ -310,7 +329,11 @@ https://www.youtube.com/watch?v=ccDPSF4V2N8
 
 Toliau arba atsisiųskite duomenų failus arba juos sugeneruokite naudodamiesi programoje realizuota funkcija.
 
-### EKSPERIMENTINĖ ANALIZĖ ###
+</details>
+
+<details>
+<summary>### EKSPERIMENTINĖ ANALIZĖ ###</summary>
+<br>
 
 Nenaudojant optimizavimo "flag'ų"
 
@@ -319,6 +342,126 @@ Nenaudojant optimizavimo "flag'ų"
 | Klasė   |        8,01 s.       |        82,75 s.      |       162        |
 | Strukt. |        7,53 s.       |        92,31 s.      |       139        |
 
+Naudojant O1 optimizavimo "flag'ą"
+
+|         | Greitis (su 1 mln.)  | Greitis (su 10 mln.) | Failo dydis (Kb) |
+| ------- | -------------------- | -------------------- | ---------------- |
+| Klasė   |        8,26 s.       |        117,12 s.     |       121        |
+| Strukt. |        7,59 s.       |        83,56 s.      |       106        |
+
+Naudojant O2 optimizavimo "flag'ą"
+
+|         | Greitis (su 1 mln.)  | Greitis (su 10 mln.) | Failo dydis (Kb) |
+| ------- | -------------------- | -------------------- | ---------------- |
+| Klasė   |        7,95 s.       |        82,32 s.      |       162        |
+| Strukt. |        7,50 s.       |        75,28 s.      |       139        |
+
+Naudojant O3 optimizavimo "flag'ą"
+
+|         | Greitis (su 1 mln.)  | Greitis (su 10 mln.) | Failo dydis (Kb) |
+| ------- | -------------------- | -------------------- | ---------------- |
+| Klasė   |        7,97 s.       |        111,45 s.     |       162        |
+| Strukt. |        7,59 s.       |        92,63 s.      |       139        |
+
+
+<details>
+<summary>Ekrano kopijos:</summary>
+<br>
+
+Klasė
+
+O0
+
+1000000   
+
+<img width="505" alt="class_O0_1mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/2b8040c5-d62b-4953-a099-65817bb46bed">
+
+10000000
+
+<img width="503" alt="class_O0_10mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/696c4288-1bb2-4fc0-9f6f-b19737e6bec0">
+
+
+O1
+
+1000000
+
+<img width="505" alt="class_O1_1mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/890f688d-bf3e-468a-aa99-da72149853d3">
+
+10000000
+
+<img width="511" alt="class_O1_10mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/d062ce80-0eee-45ae-94f4-51cda3612af8">
+
+
+O2
+
+1000000   
+
+<img width="506" alt="class_O2_1mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/f9d8dddb-096c-4f4a-bcf1-ed11743393e1">
+
+10000000
+
+<img width="506" alt="class_O2_10mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/466e7869-b55a-4dd5-a879-cd842224efc0">
+
+
+O3
+
+1000000   
+
+<img width="503" alt="class_O3_1mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/146cfdea-79f2-4798-9943-5f549696a385">
+
+10000000
+
+<img width="508" alt="class_O3_10mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/f85f4223-c440-49fb-9e45-196bafda1e1f">
+
+
+Struktūra
+
+O0
+
+1000000   
+
+<img width="505" alt="struct_O0_1mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/7305e943-c246-401d-8348-3c0ac0669b7b">
+
+10000000
+
+<img width="506" alt="struct_O0_10mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/3ac57a91-9cdb-419e-9a9f-e3b6e1d060d2">
+
+
+O1
+
+1000000   
+
+<img width="503" alt="struct_O1_1mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/405a6349-3190-4770-8814-deeca6879e74">
+
+10000000
+
+<img width="511" alt="struct_O1_10mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/38920155-0fcb-4fa0-aae6-f75807407930">
+
+
+O2
+
+1000000   
+
+<img width="508" alt="struct_O2_1mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/c06ebb7f-a800-4bc2-a8f1-2fcf6a874268">
+
+10000000
+
+<img width="503" alt="struct_O2_10mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/f662088a-ee18-4c2c-9645-cf966ecf0d29">
+
+
+O3
+
+1000000   
+
+<img width="502" alt="struct_O3_1mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/b6aec581-0483-423c-a160-1a8607ae3a99">
+
+10000000
+
+<img width="509" alt="struct_O3_10mln" src="https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/0957498e-72f3-4d9a-a075-15d113f3fc2b">
+
+</details>
+</details>
+  
 <details>
 <summary>### RELEASE'Ų INFORMACIJA ###</summary>
 <br>
