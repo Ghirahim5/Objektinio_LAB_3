@@ -99,12 +99,15 @@ Ona Onaitytė 5 6 8 4 8
 
 Tyrimo rezultatai
 
-KOMPIUTERIO SPECIFIKACIJOS:
+### KOMPIUTERIO SPECIFIKACIJOS: ###
 
 CPU: I7 - 12700H
 RAM: 16gb SODIMM 4800 Mhz
 GPU: RTX 3060 (mobile)
 
+<details>
+<summary>Tyrimo rezultatai</summary>
+<br>
 studentai1000
 
 <img width="539" alt="studentai1000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/a2ac3659-290c-4953-bc8c-7db9d08f0d87">
@@ -283,6 +286,8 @@ Deque 2 strategijos rezultatai
 10000000
 
 <img width="527" alt="2deque10000k" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/7a6ffe30-b85f-4ab4-8ea8-6ad0c4945fe0">
+
+</details>
 
 Tyrimo išvados:
 
