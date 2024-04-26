@@ -22,8 +22,6 @@ Galutinis balas bus apskaičiuojamas taip pat, kaip ir ankstesniuose variantuose
 Rezultatai bus rodomi lentelėje su stulpeliais: Pavarde, Vardas, Galutinis (Vid.) arba Galutinis (Med.) (priklausomai nuo pasirinkimo).
 
 <details>
-
-<details>
 <summary>### Funkcijos ###</summary>
 <br>
 
