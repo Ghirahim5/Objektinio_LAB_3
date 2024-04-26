@@ -1,4 +1,6 @@
-Apžvalga
+<details>
+<summary>### Apžvalga ###</summary>
+<br>
 
 Ši programa skirta generuoti studentų pažymių ataskaitas. Vartotojas gali pasirinkti iš kelių variantų:
 
@@ -19,7 +21,11 @@ Vartotojas galės rankiniu būdu įvesti studentų vardus, pavardes, namų darb�
 Galutinis balas bus apskaičiuojamas taip pat, kaip ir ankstesniuose variantuose.
 Rezultatai bus rodomi lentelėje su stulpeliais: Pavarde, Vardas, Galutinis (Vid.) arba Galutinis (Med.) (priklausomai nuo pasirinkimo).
 
-Funkcijos
+<details>
+
+<details>
+<summary>### Funkcijos ###</summary>
+<br>
 
 Pagrindinės funkcijos:
 
@@ -96,8 +102,7 @@ Pavyzdys:
 Petras Petraitis 7 8 9 10 7
 Ona Onaitytė 5 6 8 4 8
 
-
-Tyrimo rezultatai
+<details>
 
 ### KOMPIUTERIO SPECIFIKACIJOS: ###
 
