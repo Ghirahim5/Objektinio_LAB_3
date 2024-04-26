@@ -294,24 +294,20 @@ Trečias efektyviausias metodas tai realizacija naudojanti Listų antrąją stra
 
 Pirma reikia pasirinkti vieną iš trijų versijų - Deque, List arba Vector ir atsisiųsti visus failus esančius pasirinktame aplanke.
 
-Pasirinktoje versijoje reikia pasirinkti vieną iš dviejų realizuotų strategijų: 1pavadinimas_funkcijos.cpp arba 2pavadinimas_funkcijos.cpp
-(Pasirinkimas tai atsisiuntimas vieno arba kito failo BET NE ABIEJŲ!)
-
 Tada sekite šio video instrukcijas norint sukurti .exe failą:
 
 https://www.youtube.com/watch?v=ccDPSF4V2N8
 
-Atlikus nurodytus žingsnius šiame video reikia pakoreguoti CMakeList.txt failą priklausomai nuo to kurią strategiją norima naudoti 1 ar 2.
-
-- Jeigu norite naudoti 1 strategiją, tuomet atsisiųskite failą: 1pavadinimas_funkcijos.cpp ir CMakeList.txt failo nekeiskite. -
-
-- Jeigu norite naudoti 2 strategiją, tuomet atsisiųskite failą: 2pavadinimas_funkcijos.cpp ir CMakeList.txt faile prie Source failų pakeiskite pavadinimą iš 1pavadinimas_funkcijos.cpp į 2pavadinimas_funkcijos.cpp -
-
-PVZ:
-
-<img width="317" alt="Ekrano kopija 2024-03-17 192741" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/c4377823-16fb-47d4-b527-2334e7733936">
-
 Toliau arba atsisiųskite duomenų failus arba juos sugeneruokite naudodamiesi programoje realizuota funkcija.
+
+### EKSPERIMENTINĖ ANALIZĖ ###
+
+Nenaudojant optimizavimo "flag'ų"
+
+|         | Greitis (su 1 mln.)  | Greitis (su 10 mln.) | Failo dydis (Kb) |
+| ------- | -------------------- | -------------------- | ---------------- |
+| Klasė   |        8,01 s.       |        82,75 s.      |       162        |
+| Strukt. |        7,53 s.       |        92,31 s.      |       139        |
 
 ### RELEASE'Ų INFORMACIJA ###
 
@@ -354,4 +350,12 @@ v1.0
 2. Kiekvienai realizacijai taip pat buvo įgyvendintos bent 2 strategijos, o vektorių versijai - 3.
 3. Sukurtas CMakeList.txt failas
 4. Aptvarkyta repozitorija.
+5. Papildytas README.md failas
+
+v1.1
+
+1. Su visais trejais konteinerių tipais struktūra Studentas buvo pakeista į klasę Studentas.
+2. Realizuotas Konstruktorius ir Destruktorius
+3. Realizuoti "set'eriai" ir "get'eriai"
+4. Atliktas eksperimentinis tyrimas naudojant skirtingus optimizavimo "falg'us" (O0, O1, O2, O3)
 5. Papildytas README.md failas
