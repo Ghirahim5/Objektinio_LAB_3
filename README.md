@@ -106,8 +106,10 @@ RAM: 16gb SODIMM 4800 Mhz
 GPU: RTX 3060 (mobile)
 
 <details>
-<summary>Tyrimo rezultatai</summary>
+<summary>### TYRIMO REZULTATAI ###</summary>
 <br>
+
+
 studentai1000
 
 <img width="539" alt="studentai1000" src="https://github.com/Ghirahim5/Objektinis-2024/assets/147089390/a2ac3659-290c-4953-bc8c-7db9d08f0d87">
