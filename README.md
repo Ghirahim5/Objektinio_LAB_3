@@ -516,3 +516,64 @@ v1.1
 5. Papildytas README.md failas
 
 </details>
+
+<details>
+<summary>### Rule Of Five ir I/O operatorių aprašas ###</summary>
+<br>
+
+"Rule Of Five" yra C++ programinės įrangos kūrimo gairės, skirtos užtikrinti tinkamą resursų valdymą dirbant su dinamiškai paskirstyta atmintimi ir kitais resursais. Jas sudaro penkios specialios funkcijos: destruktorius, kopijavimo konstruktorius, priskyrimo operatorius kopijavimu, perkėlimo konstruktorius ir perkėlimo priskyrimo operatorius.
+
+
+1. Destruktorius:
+
+Destruktorius yra atsakingas už bet kokių resursų, kuriuos laiko objektas, išlaisvinimą, kai objektas išeina iš savo veikimo srities arba yra sunaikinamas.
+
+2. Kopijavimo konstruktorius:
+
+Kopijavimo konstruktorius sukuria naują objektą, padarydamas esamo objekto kopiją.
+Studentas klasėje kopijavimo konstruktorius įgyvendinamas kaip Studentas(const Studentas& other).
+Jis nukopijuoja visas objekto kintamųjų reikšmes iš kito objekto į naujai sukurtą objektą.
+Tai leidžia sukurti naują Studentas objektą, kuris yra esamo objekto kopija.
+
+3. Priskyrimo operatorius kopijavimu:
+
+Priskyrimo operatorius kopijavimu priskiria vieno objekto reikšmes kitam esamam objektui.
+Studentas klasėje priskyrimo operatorius įgyvendinamas kaip Studentas& operator=(const Studentas& other).
+Jis priskiria visų narės kintamųjų reikšmes iš kito objekto dabartiniam objektui.
+Tai leidžia vieno Studentas objekto reikšmes priskirti kitam esamam objektui.
+
+4. Perkėlimo konstruktorius:
+
+Perkėlimo konstruktorius sukuria naują objektą "pavogdamas" resursus (pvz., atmintį) iš esamo objekto.
+Studentas klasėje perkėlimo konstruktorius įgyvendinamas kaip Studentas(Studentas&& other) noexcept.
+Jis perkelia visų narės kintamųjų reikšmes iš kito objekto į naujai sukurtą objektą naudodamas std::move.
+Po perkėlimo kitas objektas paliekamas galiojančioje, bet neapibrėžtoje būsenoje.
+Tai leidžia efektyviai perkelti resursų nuosavybę iš vieno Studentas objekto į kitą.
+
+5. Perkėlimo priskyrimo operatorius:
+
+Perkėlimo priskyrimo operatorius priskiria vieno objekto reikšmes kitam esamam objektui "pavogdamas" resursus.
+Studentas klasėje perkėlimo priskyrimo operatorius įgyvendinamas kaip Studentas& operator=(Studentas&& other) noexcept.
+Jis perkelia visų narės kintamųjų reikšmes iš kito objekto į dabartinį objektą naudodamas std::move.
+Po perkėlimo kitas objektas paliekamas galiojančioje, bet neapibrėžtoje būsenoje.
+Tai leidžia efektyviai perkelti resursų nuosavybę iš vieno Studentas objekto į kitą esamą objektą.
+Įvesties ir išvesties operatoriai
+
+
+Apart "Rule Of Five" funkcijų, kode taip pat yra įvesties ir išvesties operatoriai (operator>> ir operator<<), kurie skirti skaityti iš srautų ir rašyti į juos. Šie operatoriai leidžia rankiniu būdu įvesti ir išvesti Studentas objektus.
+
+Funkcija operator>> skaito duomenis iš įvesties srauto (std::istream) ir priskiria juos Studentas objektui.
+
+Ji nuskaito vardą ir pavardę (tempV ir tempP) ir kintantį pažymių skaičių (temp_grade) iš įvesties srauto.
+Pažymiai saugomi laikinajame vektoriuje (temp_Ndrez), o paskutinis pažymys nustatomas kaip egzamino rezultatas (egz_rez).
+Galiausiai laikinosios reikšmės priskiriamos atitinkamiems Studentas objekto narės kintamiesiems.
+Funkcija operator<< įrašo Studentas objekto duomenis į išvesties srautą (std::ostream).
+Ji įrašo vardą ir pavardę (v ir p), po jų - visus pažymius (nd_rez) ir egzamino rezultatą (egz_rez) į išvesties srautą.
+Šie įvesties ir išvesties operatoriai leidžia lengvai rankiniu būdu įvesti ir išvesti Studentas objektus, todėl patogu sąveikauti su klase konsolės ar failų aplinkoje.
+
+"Rule Of Five" laikymasis yra svarbi C++ praktika, nes ji padeda išvengti:
+
+Resursų nutekėjimo: Kai resursai nepaleidžiami, jie nebėra reikalingi, tai gali sukelti atminties nutekėjimą, o tai gali lėtinti programos veikimą ir net ją sugriauti. "Rule Of Five" užtikrina, kad resursai būtų tinkamai išvalyti, kai objektas nebėra reikalingas.
+
+Kybančių rodyklių: Kybantis rodyklė yra rodyklė, kuri rodo į atmintį, kuri jau buvo išleista. Bandant pasiekti atmintį per kybančią rodyklę, programa gali sutrikti.
+</details>
