@@ -19,7 +19,6 @@ private:
     std::string v;
 	std::string p; 
 	double egz_rez; 
-	double mediana;
 	std::vector<double> nd_rez; 
     double nd_sum = 0;
     double rez;
@@ -28,18 +27,21 @@ private:
 
 public:
 
-    // konstruktoriai
-    Studentas();
-    Studentas(const std::string& v_, const std::string& p_, double mediana, double egz_rez_, double rez_, const std::vector<double>& nd_rez_);
-    Studentas(const Studentas& other);                                                   // copy konstruktorius
-    Studentas(Studentas&& other) noexcept;                                               // move konstruktorius
-    Studentas& operator=(const Studentas& other);                                        // copy priskyrimo operatorius
-    Studentas& operator=(Studentas&& other) noexcept;                                    // move priskyrimo operatorius
-    friend std::istream& operator>>(std::istream& is, Studentas& studentas);             // ivesties operatorius
-    friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas);       // isvesties operatorius
+    Studentas();                                                                                                                  // konstruktorius be parametru
+    Studentas(const std::string& v_, const std::string& p_, double egz_rez_, double rez_, const std::vector<double>& nd_rez_);    // konstruktorius su parametrais
+    Studentas(const Studentas& other);                                                                                            // copy konstruktorius
+    Studentas(Studentas&& other) noexcept;                                                                                        // move konstruktorius
+    Studentas& operator=(const Studentas& other);                                                                                 // copy priskyrimo operatorius
+    Studentas& operator=(Studentas&& other) noexcept;                                                                             // move priskyrimo operatorius
+    friend std::istream& operator>>(std::istream& is, Studentas& studentas);                                                      // ivesties operatorius
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas);                                                // isvesties operatorius
 
     // destruktorius
-    ~Studentas() {}
+    ~Studentas() {
+    	v.clear();
+		p.clear();
+		nd_rez.clear();
+    }
 
     // get'eriai
     inline std::string getV() const { return v; }
@@ -53,7 +55,6 @@ public:
     void setV(const std::string& v) { this->v = v; }
     void setP(const std::string& p) { this->p = p; }
     void setRez(double rez) { this->rez = rez; }
-    void setMediana(double mediana) { this->mediana = mediana; }
     void setEgz_rez(double egz_rez) { this->egz_rez = egz_rez; }
     void setNd_rez(const std::vector<double>& nd_rez) { this->nd_rez = nd_rez; UpdateNdSum(); }
     void setNd_sum(double nd_sum) { this->nd_sum = nd_sum; }

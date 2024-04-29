@@ -6,28 +6,25 @@ Studentas::Studentas() {
     v = " ";
     p = " ";
     egz_rez = 0;
-    mediana = 0;
     rez = 0;
     nd_rez = { 0 };
 }
 
-//  konstruktorius su parametrais
+// konstruktorius su parametrais
 
-Studentas::Studentas(const std::string& v_, const std::string& p_, double mediana_, double egz_rez_, double rez_, const std::vector<double>& nd_rez_){
+Studentas::Studentas(const std::string& v_, const std::string& p_, double egz_rez_, double rez_, const std::vector<double>& nd_rez_){
     v = v_;
     p = p_;
     egz_rez = egz_rez_;
-    mediana = mediana_;
     rez = ApskaiciuotiGalutini(true);
     nd_rez.assign(nd_rez_.begin(), nd_rez_.end());
 }
 
-//  copy konstruktorius
+// copy konstruktorius
 Studentas::Studentas(const Studentas& other){
     v = other.v;
     p = other.p;
     egz_rez = other.egz_rez;
-    mediana = other.mediana;
     rez = other.rez;
     nd_rez = other.nd_rez;
 }
@@ -37,17 +34,14 @@ Studentas::Studentas(Studentas&& other) noexcept {
     v = std::move(other.v);
     p = std::move(other.p);
     egz_rez = std::move(other.egz_rez);
-    mediana = std::move(other.mediana);
     rez = std::move(other.rez);
     nd_rez = std::move(other.nd_rez);
-    {
-        other.v.clear();
-        other.p.clear();
-        other.egz_rez = 0;
-        other.mediana = 0;
-        other.rez = 0;
-        other.nd_rez.clear();
-    }
+
+    other.v.clear();
+    other.p.clear();
+    other.egz_rez = 0;
+    other.rez = 0;
+    other.nd_rez.clear();
 }
 
 // copy priskyrimo operatorius
@@ -56,7 +50,6 @@ Studentas& Studentas::operator=(const Studentas& other) {
         v = other.v;
         p = other.p;
         egz_rez = other.egz_rez;
-        mediana = other.mediana;
         rez = other.rez;
         nd_rez = other.nd_rez;
     }
@@ -69,13 +62,12 @@ Studentas& Studentas::operator=(Studentas&& other) noexcept {
         v = std::move(other.v);
         p = std::move(other.p);
         egz_rez = std::move(other.egz_rez);
-        mediana = std::move(other.mediana);
         rez = std::move(other.rez);
         nd_rez = std::move(other.nd_rez);
+
         other.v.clear();
         other.p.clear();
         other.egz_rez = 0;
-        other.mediana = 0;
         other.rez = 0;
         other.nd_rez.clear();
     }
@@ -99,7 +91,6 @@ std::istream& operator>>(std::istream& is, Studentas& studentas) {
         temp_Ndrez.push_back(temp_grade);
     }
 
-    // Isvalome klaidinga bita, jei pavyko nuskaityti visus duomenis
     if (is.eof()) {
         is.clear();
     }
@@ -116,8 +107,8 @@ std::istream& operator>>(std::istream& is, Studentas& studentas) {
 // isvesties operatorius 
 std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
     os << studentas.getV() << " " << studentas.getP();
-    for (const auto& result : studentas.getNd_rez()) {
-        os << " " << result;
+    for (const auto& rez : studentas.getNd_rez()) {
+        os << " " << rez;
     }
     os << " " << studentas.getEgz_rez();
     return os;
