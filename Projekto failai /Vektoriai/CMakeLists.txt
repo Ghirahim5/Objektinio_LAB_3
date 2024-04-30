@@ -1,7 +1,7 @@
 ﻿cmake_minimum_required(VERSION 3.10)
 
 # Add executable
-add_executable(studentai v1.2_vektoriai.cpp vektoriu_funkcijos.cpp studentas.cpp)
+add_executable(studentai v1.5_vektoriai.cpp vektoriu_funkcijos.cpp studentas.cpp)
 
 # Include directories
 target_include_directories(studentai PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
