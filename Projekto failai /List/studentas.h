@@ -1,6 +1,8 @@
 #ifndef STUDENTAS_H
 #define STUDENTAS_H
 
+#include "asmuo.h"
+
 #include <string>
 #include <list>
 #include <algorithm>
@@ -12,7 +14,7 @@
 #include <fstream>
 #include <sstream>
 
-class Studentas {
+class Studentas : public Asmuo {
 
 private:
 
@@ -46,6 +48,7 @@ public:
     // get'eriai
     inline std::string getV() const { return v; }
     inline std::string getP() const { return p; }
+    std::string getName() const { return getV() + " " + getP(); }
     const std::list<double>& getNd_rez() const { return nd_rez; }
     double getEgz_rez() const { return egz_rez; }
     double getNd_sum() const { return nd_sum; }

@@ -1072,6 +1072,9 @@ std::list<double> Testavimas(list<Studentas>& Duomenys) {
 }
 void TestavimasRuleOfFive() {
 
+    // Asmuo A; 
+    // Jei atkomentuojame eilute virs sitos, gausime klaida, nes Asmuo klase yra abstrakti
+
     // Testuojame konstruktorius
     list<double> nd_rez = { 10, 9, 9, 10 };
     Studentas studentas1("Matas", "Siaurodinas", 10, 10, nd_rez);
