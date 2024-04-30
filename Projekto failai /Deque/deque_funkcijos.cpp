@@ -1071,6 +1071,9 @@ std::deque<double> Testavimas(deque<Studentas>& Duomenys) {
 }
 void TestavimasRuleOfFive() {
 
+    // Asmuo A; 
+    // Jei atkomentuojame eilute virs sitos, gausime klaida, nes Asmuo klase yra abstrakti
+
     // Testuojame konstruktorius
     deque<double> nd_rez = { 10, 9, 9, 10 };
     Studentas studentas1("Matas", "Siaurodinas", 10, 10, nd_rez);

@@ -1,6 +1,8 @@
 #ifndef STUDENTAS_H
 #define STUDENTAS_H
 
+#include "Asmuo.h"
+
 #include <string>
 #include <deque>
 #include <algorithm>
@@ -12,7 +14,7 @@
 #include <fstream>
 #include <sstream>
 
-class Studentas {
+class Studentas : public Asmuo {
 
 private:
 
@@ -54,6 +56,7 @@ public:
     // set'eriai
     void setV(const std::string& v) { this->v = v; }
     void setP(const std::string& p) { this->p = p; }
+    std::string getName() const { return getV() + " " + getP(); }
     void setRez(double rez) { this->rez = rez; }
     void setEgz_rez(double egz_rez) { this->egz_rez = egz_rez; }
     void setNd_rez(const std::deque<double>& nd_rez) { this->nd_rez = nd_rez; UpdateNdSum(); }
