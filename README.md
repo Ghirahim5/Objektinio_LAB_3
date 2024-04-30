@@ -515,6 +515,12 @@ v1.1
 4. Atliktas eksperimentinis tyrimas naudojant skirtingus optimizavimo "falg'us" (O0, O1, O2, O3)
 5. Papildytas README.md failas
 
+v1.2
+
+1. Realizuota "Rule Of Five" (Sukurti Copy ir Move konstruktoriai bei jų priskyrimo operatorių realizacijos).
+2. Papildytas Desktruktorius.
+3. Sukurta "Rule Of Five ir I/O operatorių testavimo funkcija.
+
 </details>
 
 <details>
