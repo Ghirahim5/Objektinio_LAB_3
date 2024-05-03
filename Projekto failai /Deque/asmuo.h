@@ -2,7 +2,7 @@
 #define ASMUO_H
 
 #include <string>
-#include <vector>
+#include <deque>
 #include <iostream>
 #include <algorithm>
 #include <numeric>
@@ -20,7 +20,11 @@ public:
     // get'eriai
     virtual std::string getV() const = 0;
     virtual std::string getP() const = 0;
-    virtual std::string getName() const = 0;
+    virtual const std::deque<double>& getNd_rez() const = 0;
+    virtual double getEgz_rez() const = 0;
+    virtual double getNd_sum() const = 0;
+    virtual double getRez() const = 0;
+
 };
 
-#endif // PERSON_H
+#endif // ASMUO_H
