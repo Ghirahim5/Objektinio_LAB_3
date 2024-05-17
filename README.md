@@ -521,6 +521,10 @@ v1.2
 2. Papildytas Desktruktorius.
 3. Sukurta "Rule Of Five ir I/O operatorių testavimo funkcija.
 
+v1.5
+
+1. Realizuota abstrakti klasė Asmuo, klasė Studentas yra šios klasės išvestinė klasė.
+
 </details>
 
 <details>
@@ -582,4 +586,12 @@ Ji įrašo vardą ir pavardę (v ir p), po jų - visus pažymius (nd_rez) ir egz
 Resursų nutekėjimo: Kai resursai nepaleidžiami, jie nebėra reikalingi, tai gali sukelti atminties nutekėjimą, o tai gali lėtinti programos veikimą ir net ją sugriauti. "Rule Of Five" užtikrina, kad resursai būtų tinkamai išvalyti, kai objektas nebėra reikalingas.
 
 Kybančių rodyklių: Kybantis rodyklė yra rodyklė, kuri rodo į atmintį, kuri jau buvo išleista. Bandant pasiekti atmintį per kybančią rodyklę, programa gali sutrikti.
+</details>
+
+<details>
+<summary>### Google Test ###</summary>
+<br>
+
+![GoogleTest](https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/98a708dc-28fa-43e2-9e10-79449a5537bc)
+
 </details>
