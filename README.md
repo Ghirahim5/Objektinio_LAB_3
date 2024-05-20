@@ -616,6 +616,9 @@ Kybančių rodyklių: Kybantis rodyklė yra rodyklė, kuri rodo į atmintį, kur
 <summary>### "ManoVektorius" ir std::vector konteinerių spartos analizė ###</summary>
 <br>
 
-![image](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/5ab7b4ed-91fd-4db7-a4b6-73d056399ae9)
+![image](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/697d4281-6f1d-4c17-a243-7d3e018e79be)
+
+Visi testai buvo atlikti naudojant O2 optimizavimo gairę.
+Rezultatuose matyti, jog "ManoVektorius" visai aspektais pranašesnis nei std::vector (šios programos kontekste)
 
 </details>
