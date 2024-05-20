@@ -7,6 +7,7 @@
 #define STUDENTAS_H
 
 #include "Asmuo.h"
+#include "ManoVektorius.h"
 
 #include <string>
 #include <vector>
