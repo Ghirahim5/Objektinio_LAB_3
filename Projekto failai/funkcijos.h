@@ -6,12 +6,12 @@
 
 void GeneruotiPazymius(std::vector<Studentas> & Duomenys);
 void GeneruotiPazymiusVardus();
-double Skaitymas(std::vector<Studentas>& Duomenys);
-void RusiuotiSpausdinti(std::vector<Studentas>& Duomenys, double laikas, const std::string& pavadinimas);
+double Skaitymas(ManoVektorius<Studentas>& Duomenys1);
+void RusiuotiSpausdinti(ManoVektorius<Studentas>& Duomenys1, double laikas, const std::string& pavadinimas);
 void RankinisIvedimas(std::vector<Studentas>& Duomenys);
 void GeneruotiFailus();
-void RusiuotiGeraisBlogais(std::vector<Studentas>& Duomenys);
-std::vector<double> Testavimas(std::vector<Studentas>& Duomenys);
+void RusiuotiGeraisBlogais(ManoVektorius<Studentas>& Duomenys1);
+std::vector<double> Testavimas(ManoVektorius<Studentas>& Duomenys1);
 void TestavimasRuleOfFive();
 
 #endif
