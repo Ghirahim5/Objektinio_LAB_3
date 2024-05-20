@@ -595,3 +595,19 @@ Kybančių rodyklių: Kybantis rodyklė yra rodyklė, kuri rodo į atmintį, kur
 ![GoogleTest](https://github.com/Ghirahim5/Objektinio_LAB_2/assets/147089390/98a708dc-28fa-43e2-9e10-79449a5537bc)
 
 </details>
+
+<details>
+<summary>### "ManoVektorius funkcijos" ###</summary>
+<br>
+
+1.	ManoVektorius() : arr(nullptr), capacity(0), current(0) {}: Tai yra ManoVektorius klasės konstruktorius be parametrų. Jis inicializuoja arr rodyklę į nullptr, capacity ir current kintamuosius į 0. Tai reiškia, kad naujai sukurtas ManoVektorius objektas bus tuščias.
+   
+2.	~ManoVektorius(): Tai yra ManoVektorius klasės destruktorius. Jis sunaikina visus vektoriaus elementus naudojant destroy_elements() funkciją ir atlaisvina atmintį, kurią užima vektoriaus dinaminis masyvas, naudojant allocator.deallocate() funkciją.
+   
+3.	ManoVektorius(const ManoVektorius& other): Tai yra ManoVektorius klasės kopijavimo konstruktorius. Jis kopijuoja visus elementus iš other objekto į naują ManoVektorius objektą. Tai atliekama naudojant allocator.allocate() funkciją, kad būtų sukurtas naujas masyvas, ir std::allocator_traits<Allocator>::construct() funkciją, kad būtų sukurti nauji elementai.
+   
+4.	ManoVektorius& operator=(const ManoVektorius& other): Tai yra priskyrimo operatorius, kuris priskiria vieną ManoVektorius objektą kitam. Jis naudoja kopijavimo konstruktorių ir swap() funkciją, kad atliktų priskyrimo operaciją efektyviai.
+
+5.	reference at(size_type pos): Tai yra funkcija, kuri grąžina nuorodą į elementą, esantį nurodytoje pozicijoje pos. Jei pozicija yra už vektoriaus ribų, išmetama std::out_of_range išimtis.
+
+</details>
