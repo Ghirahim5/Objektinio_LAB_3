@@ -271,13 +271,13 @@ string PasirinktiFaila() {
     system("pause");
     system("cls");
 }
-double Skaitymas(vector<Studentas>& Duomenys) {
+double Skaitymas(ManoVektorius<Studentas>& Duomenys1) {
 
     Studentas studentas;
     string tempV, tempP;
     string line;
     string pavadinimas;
-    vector<double> temp_Ndrez;
+    ManoVektorius<double> temp_Ndrez;
 
     while (true) {
         try {
@@ -313,7 +313,7 @@ double Skaitymas(vector<Studentas>& Duomenys) {
                     throw runtime_error("Pasirinktas failas yra tuscias");
                 }
 
-                Duomenys.push_back(studentas);
+                Duomenys1.push_back(studentas);
                 studentas.clearNdRez();
             }
             infile.close();
@@ -336,7 +336,7 @@ double Skaitymas(vector<Studentas>& Duomenys) {
     system("pause");
     system("cls");
 }
-void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string& pavadinimas) {
+void RusiuotiSpausdinti(ManoVektorius<Studentas>& Duomenys1, double laikas, const string& pavadinimas) {
     string pasirinkimas, pasirinkimas1, pasirinkimas2, pasirinkimas3;
 
     cout << "Pagal ka norite rusiuoti rezultatus?" << endl;
@@ -351,7 +351,7 @@ void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string
         cin >> pasirinkimas3;
     }
     if (pasirinkimas3 == "4") {
-        RusiuotiGeraisBlogais(Duomenys);
+        RusiuotiGeraisBlogais(Duomenys1);
         return;
     }
     cout << endl;
@@ -391,31 +391,31 @@ void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string
     // Rusiuojama pagal pasirinkta kriteriju
     if (pasirinkimas3 == "1") {
         if (pasirinkimas1 == "1")
-            sort(Duomenys.begin(), Duomenys.end(), [](const Studentas& a, const Studentas& b) { return a.getV() > b.getP(); });
+            sort(Duomenys1.begin(), Duomenys1.end(), [](const Studentas& a, const Studentas& b) { return a.getV() > b.getP(); });
         else
-            sort(Duomenys.begin(), Duomenys.end(), [](const Studentas& a, const Studentas& b) { return a.getV() < b.getP(); });
+            sort(Duomenys1.begin(), Duomenys1.end(), [](const Studentas& a, const Studentas& b) { return a.getV() < b.getP(); });
     }
     else if (pasirinkimas3 == "2") {
         if (pasirinkimas1 == "1")
-            sort(Duomenys.begin(), Duomenys.end(), [](const Studentas& a, const Studentas& b) { return a.getV() > b.getP(); });
+            sort(Duomenys1.begin(), Duomenys1.end(), [](const Studentas& a, const Studentas& b) { return a.getV() > b.getP(); });
         else
-            sort(Duomenys.begin(), Duomenys.end(), [](const Studentas& a, const Studentas& b) { return a.getV() < b.getP(); });
+            sort(Duomenys1.begin(), Duomenys1.end(), [](const Studentas& a, const Studentas& b) { return a.getV() < b.getP(); });
     }
     else if (pasirinkimas3 == "3") {
         if(pasirinkimas == "1") {
             if (pasirinkimas1 == "1") {
-                sort(Duomenys.begin(), Duomenys.end(), [](Studentas& a, Studentas& b) { return a.ApskaiciuotiGalutini(false) > b.ApskaiciuotiGalutini(false); });
+                sort(Duomenys1.begin(), Duomenys1.end(), [](Studentas& a, Studentas& b) { return a.ApskaiciuotiGalutini(false) > b.ApskaiciuotiGalutini(false); });
             }
             else
-                sort(Duomenys.begin(), Duomenys.end(), [](Studentas& a, Studentas& b) { return a.ApskaiciuotiGalutini(false) < b.ApskaiciuotiGalutini(false); });
+                sort(Duomenys1.begin(), Duomenys1.end(), [](Studentas& a, Studentas& b) { return a.ApskaiciuotiGalutini(false) < b.ApskaiciuotiGalutini(false); });
         }
         else
         {
            if (pasirinkimas1 == "1") {
-               sort(Duomenys.begin(), Duomenys.end(), [](Studentas& a, Studentas& b) { return a.ApskaiciuotiGalutini(true) > b.ApskaiciuotiGalutini(true); });
+               sort(Duomenys1.begin(), Duomenys1.end(), [](Studentas& a, Studentas& b) { return a.ApskaiciuotiGalutini(true) > b.ApskaiciuotiGalutini(true); });
            }
            else
-               sort(Duomenys.begin(), Duomenys.end(), [](Studentas& a, Studentas& b) { return a.ApskaiciuotiGalutini(true) < b.ApskaiciuotiGalutini(true); });
+               sort(Duomenys1.begin(), Duomenys1.end(), [](Studentas& a, Studentas& b) { return a.ApskaiciuotiGalutini(true) < b.ApskaiciuotiGalutini(true); });
         }
     }
 
@@ -425,7 +425,7 @@ void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string
         if (pasirinkimas == "1") {
             cout << left << setw(15) << "Pavarde" << setw(15) << "Vardas" << setw(15) << "Galutinis (Vid.)" << endl;
             cout << "-----------------------------------------------" << endl;
-            for (auto& studentas : Duomenys) {
+            for (auto& studentas : Duomenys1) {
                 studentas.ApskaiciuotiGalutini(false);
                 cout << left << setw(15) << studentas.getV() << setw(15) << studentas.getP() << fixed << setprecision(2) << setw(15) << studentas.getRez() << endl;
             }
@@ -434,7 +434,7 @@ void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string
         else {
             cout << left << setw(15) << "Pavarde" << setw(15) << "Vardas" << setw(15) << "Galutinis (Med.)" << endl;
             cout << "-----------------------------------------------" << endl;
-            for (auto& studentas : Duomenys) {
+            for (auto& studentas : Duomenys1) {
                 studentas.ApskaiciuotiGalutini(true);
                 cout << left << setw(15) << studentas.getV() << setw(15) << studentas.getP() << fixed << setprecision(2) << setw(15) << studentas.getRez() << endl;
             }
@@ -451,7 +451,7 @@ void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string
         if (pasirinkimas == "1") {
             cout << left << setw(15) << "Pavarde" << setw(15) << "Vardas" << setw(15) << "Galutinis (Vid.)" << endl;
             cout << "-----------------------------------------------" << endl;
-            for (auto& studentas : Duomenys) {
+            for (auto& studentas : Duomenys1) {
                 studentas.ApskaiciuotiGalutini(false);
                 cout << left << setw(15) << studentas.getV() << setw(15) << studentas.getP() << fixed << setprecision(2) << setw(15) << studentas.getRez() << endl;
             }
@@ -460,7 +460,7 @@ void RusiuotiSpausdinti(vector<Studentas>& Duomenys, double laikas, const string
         else {
             cout << left << setw(15) << "Pavarde" << setw(15) << "Vardas" << setw(15) << "Galutinis (Med.)" << endl;
             cout << "-----------------------------------------------" << endl;
-            for (auto& studentas : Duomenys) {
+            for (auto& studentas : Duomenys1) {
                 studentas.ApskaiciuotiGalutini(true);
                 cout << left << setw(15) << studentas.getV() << setw(15) << studentas.getP() << fixed << setprecision(2) << setw(15) << studentas.getRez() << endl;
             }
@@ -721,10 +721,10 @@ void GeneruotiFailus() {
     system("pause");
     system("cls");
 }
-void RusiuotiGeraisBlogais(vector<Studentas>& Duomenys) {
+void RusiuotiGeraisBlogais(ManoVektorius<Studentas>& Duomenys1) {
 
-    vector<Studentas> Kietiakai;
-    vector<Studentas> Nuskriaustukai;
+    ManoVektorius<Studentas> Kietiakai;
+    ManoVektorius<Studentas> Nuskriaustukai;
 
     string pasirinkimas;
     cout << "Kaip norite matyti savo galutini bala?" << endl;
@@ -746,7 +746,7 @@ void RusiuotiGeraisBlogais(vector<Studentas>& Duomenys) {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
-    for (auto& studentas : Duomenys) {
+    for (auto& studentas : Duomenys1) {
         if (pasirinkimas == "1") {
             studentas.ApskaiciuotiGalutini(false);
         }
@@ -755,7 +755,7 @@ void RusiuotiGeraisBlogais(vector<Studentas>& Duomenys) {
         }
     }
 
-    for (auto& studentas : Duomenys) {
+    for (auto& studentas : Duomenys1) {
         if (studentas.getRez() >= 5) {
             Kietiakai.push_back(studentas);
         }
@@ -820,7 +820,7 @@ void RusiuotiGeraisBlogais(vector<Studentas>& Duomenys) {
     system("pause");
     system("cls");
 }
-std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
+std::vector<double> Testavimas(ManoVektorius<Studentas>& Duomenys1) {
 
     try {
         Studentas studentas;
@@ -846,8 +846,8 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
         duration<double> trukme4;
         duration<double> trukme5;
 
-        vector<Studentas> Kietiakai;
-        vector<Studentas> Nuskriaustukai;
+        ManoVektorius<Studentas> Kietiakai;
+        ManoVektorius<Studentas> Nuskriaustukai;
 
         cout << "Kokia strategija noretumete taikyti?" << endl;
         cout << "1 - pirma" << endl;
@@ -941,7 +941,7 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
                 throw runtime_error("Pasirinktas failas yra tuscias");
             }
 
-            Duomenys.push_back(studentas);
+            Duomenys1.push_back(studentas);
             studentas.clearNdRez();
         }
         infile.close();
@@ -949,7 +949,7 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
         pabaiga2 = high_resolution_clock::now();
         trukme2 = duration_cast<duration<double>>(pabaiga2 - pradzia2);
 
-        for (auto& studentas : Duomenys) {
+        for (auto& studentas : Duomenys1) {
             if (pasirinkimas == "1") {
                 studentas.ApskaiciuotiGalutini(false);
             }
@@ -960,7 +960,7 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
         if (pasirinkimas3 == "1") {
             pradzia3 = high_resolution_clock::now();
 
-            for (auto& studentas : Duomenys) {
+            for (auto& studentas : Duomenys1) {
                 if (studentas.getRez() >= 5) {
                     Kietiakai.push_back(studentas);
                 }
@@ -968,7 +968,7 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
                     Nuskriaustukai.push_back(studentas);
                 }
             }
-            Duomenys.clear();
+            Duomenys1.clear();
 
             pabaiga3 = high_resolution_clock::now();
             trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
@@ -976,18 +976,18 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
         else if (pasirinkimas3 == "2") {
             pradzia3 = high_resolution_clock::now();
 
-            for (auto it = Duomenys.begin(); it != Duomenys.end();) {
+            for (auto it = Duomenys1.begin(); it != Duomenys1.end();) {
                 auto& studentas = *it;
                 if (studentas.getRez() < 5.0) {
                     Nuskriaustukai.push_back(*it);
-                    swap(*it, Duomenys.back());
-                    Duomenys.pop_back();
+                    swap(*it, Duomenys1.back());
+                    Duomenys1.pop_back();
                 }
                 else {
                     ++it;
                 }
             }
-            Kietiakai = Duomenys;
+            Kietiakai = Duomenys1;
 
             pabaiga3 = high_resolution_clock::now();
             trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
@@ -995,14 +995,14 @@ std::vector<double> Testavimas(vector<Studentas>& Duomenys) {
         else if (pasirinkimas3 == "3") {
             pradzia3 = high_resolution_clock::now();
 
-            auto partitionPoint = partition(Duomenys.begin(), Duomenys.end(), [](const Studentas& studentas) {
+            auto partitionPoint = partition(Duomenys1.begin(), Duomenys1.end(), [](const Studentas& studentas) {
                 return studentas.getRez() >= 5;
                 });
-            Kietiakai.assign(Duomenys.begin(), partitionPoint);
-            Nuskriaustukai.assign(partitionPoint, Duomenys.end());
+            Kietiakai.assign(Duomenys1.begin(), partitionPoint);
+            Nuskriaustukai.assign(partitionPoint, Duomenys1.end());
 
-            Duomenys.clear();
-            Duomenys.shrink_to_fit();
+            Duomenys1.clear();
+            Duomenys1.shrink_to_fit();
 
             pabaiga3 = high_resolution_clock::now();
             trukme3 = duration_cast<duration<double>>(pabaiga3 - pradzia3);
