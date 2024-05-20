@@ -33,7 +33,8 @@ int main() {
         cout << "5 - Nuskaityti duomenis is failo" << endl;
         cout << "6 - Testavimas" << endl;
         cout << "7 - Testavimas (Rule of five ir I/O operatoriu)" << endl;
-        cout << "8 - Baigti darba" << endl;
+        cout << "8 - Vector VS ManoVektorius" << endl;
+        cout << "9 - Baigti darba" << endl;
         cout << endl;
         cout << "Pasirinkite veiksma ivesdami skaiciu: ";
         cin >> veiksmas;
@@ -96,6 +97,12 @@ int main() {
             break;
         }
         case 8:
+        {
+			Vector_VS_ManoVektorius();
+			break;
+		}
+
+        case 9:
             cout << "Programa baigia darba." << endl;
             return 0;
 
