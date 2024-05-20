@@ -615,10 +615,69 @@ Kybančių rodyklių: Kybantis rodyklė yra rodyklė, kuri rodo į atmintį, kur
 <details>
 <summary>### "ManoVektorius" ir std::vector konteinerių spartos analizė ###</summary>
 <br>
-
+  
+Visi testai buvo atlikti naudojant O2 optimizavimo gairę.
+  
 ![image](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/697d4281-6f1d-4c17-a243-7d3e018e79be)
 
-Visi testai buvo atlikti naudojant O2 optimizavimo gairę.
+Duomenų nuskaitymo į failus greičio rezultatai:
+
+|         | Greitis (su 100k)  | Greitis (su 1 mln.) | Greitis (su 10 mln.) |
+| ------- | -------------------- | -------------------- | ---------------- |
+| ManoVektorius   |        0,563 s.       |        6,602 s.      |       73.534 s.        |
+| std::vector     |        0,591 s.       |        7.156 s.      |       85.281 s.        |
+
+Studentų rūšiavimo į atskirus konteinerius greičio rezultatai:
+
+|         | Greitis (su 100k)  | Greitis (su 1 mln.) | Greitis (su 10 mln.) |
+| ------- | -------------------- | -------------------- | ---------------- |
+| ManoVektorius   |        0,0056 s.       |        0.126 s.      |       0.463 s.        |
+| std::vector     |        0,0215 s.       |        0.294 s.      |       18.597 s.        |
+
+Studentų rikiavimo didėjimo arba mažėjimo tvarka greičio rezultatai:
+
+|         | Greitis (su 100k)  | Greitis (su 1 mln.) | Greitis (su 10 mln.) |
+| ------- | -------------------- | -------------------- | ---------------- |
+| ManoVektorius   |        0,005 s.       |        0,120 s.      |       0.347 s.        |
+| std::vector     |        0,017 s.       |        0,229 s.      |       3.571 s.        |
+
+Bendro programų greičio rezultatai:
+
+|         | Greitis (su 100k)  | Greitis (su 1 mln.) | Greitis (su 10 mln.) |
+| ------- | -------------------- | -------------------- | ---------------- |
+| ManoVektorius   |        0,667 s.       |        8,524 s.      |       80.253 s.        |
+| std::vector     |        0,902 s.       |        11,287 s.      |       149.268 s.        |
+
 Rezultatuose matyti, jog "ManoVektorius" visai aspektais pranašesnis nei std::vector (šios programos kontekste)
+
+<details>
+<summary>NUOTRAUKOS</summary>
+<br>
+
+ManoVektorius 100k
+
+![ManoVektorius100k](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/07f6672c-b896-4fad-808b-cba88a92595b)
+
+ManoVektorius 1000k
+
+![ManoVektorius1000k](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/07d7e0ac-0fd8-4fd4-add1-0c01e5e26bdc)
+
+ManoVektorius 10000k
+
+![ManoVektorius10000k](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/4ff4016c-d55c-4627-b80d-945df89f2fc3)
+
+std::vector 100k
+
+![Vector100k](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/3b3c259e-efdb-41b0-9017-acb2f43e534c)
+
+std::vector 1000k
+
+![Vector1000k](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/b57967d9-8e6b-4263-9918-ae6ca5ebdc79)
+
+std::vector 10000k
+
+![Vector10000k](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/6d84f1d2-bc82-4e80-890a-616dd035c744)
+
+</details>
 
 </details>
