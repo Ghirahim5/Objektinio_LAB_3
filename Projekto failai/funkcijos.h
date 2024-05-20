@@ -13,5 +13,6 @@ void GeneruotiFailus();
 void RusiuotiGeraisBlogais(ManoVektorius<Studentas>& Duomenys1);
 std::vector<double> Testavimas(ManoVektorius<Studentas>& Duomenys1);
 void TestavimasRuleOfFive();
+void Vector_VS_ManoVektorius();
 
 #endif
