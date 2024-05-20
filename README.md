@@ -597,7 +597,7 @@ Kybančių rodyklių: Kybantis rodyklė yra rodyklė, kuri rodo į atmintį, kur
 </details>
 
 <details>
-<summary>### "ManoVektorius funkcijos" ###</summary>
+<summary>### "ManoVektorius" funkcijos ###</summary>
 <br>
 
 1.	ManoVektorius() : arr(nullptr), capacity(0), current(0) {}: Tai yra ManoVektorius klasės konstruktorius be parametrų. Jis inicializuoja arr rodyklę į nullptr, capacity ir current kintamuosius į 0. Tai reiškia, kad naujai sukurtas ManoVektorius objektas bus tuščias.
