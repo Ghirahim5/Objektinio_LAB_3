@@ -1172,3 +1172,53 @@ void TestavimasRuleOfFive() {
     cout << "Testai baigti."<<endl;
     cout << endl;
 }
+void Vector_VS_ManoVektorius() {
+
+    high_resolution_clock::time_point pradzia1;
+    high_resolution_clock::time_point pabaiga1;
+
+    high_resolution_clock::time_point pradzia2;
+    high_resolution_clock::time_point pabaiga2;
+
+    duration<double> trukme1;
+    duration<double> trukme2;
+
+    unsigned int sz;
+    std::vector<int> v1;
+    for (int i = 0; i < 5; i++) {
+
+        // Pradeti v1 uzpildymo laiko matavima
+        pradzia1 = high_resolution_clock::now();
+
+        sz = pow(10, i + 4); // 10000, 100000, 1000000, 10000000, 100000000
+        v1.clear();
+        for (int j = 1; j <= sz; ++j)
+            v1.push_back(j);
+
+        // Baigti v1 uzpildymo laiko matavima
+        pabaiga1 = high_resolution_clock::now();
+        trukme1 = duration_cast<duration<double>>(pabaiga1 - pradzia1);
+
+        cout<< "std::vector uzpildymo laikas su " << sz << " elementu: " << fixed << setprecision(6) << trukme1.count() << " sekundziu" << endl;
+    }
+
+    cout << endl;
+
+    ManoVektorius<int> v2;
+    for (int i = 0; i < 5; i++) {
+
+        // Pradeti v2 uzpildymo laiko matavima
+        pradzia2 = high_resolution_clock::now();
+
+        sz = pow(10, i + 4); // 10000, 100000, 1000000, 10000000, 100000000
+        v2.clear();
+        for (int j = 1; j <= sz; ++j)
+            v2.push_back(j);
+
+        // Baigti v2 uzpildymo laiko matavima 
+        pabaiga2 = high_resolution_clock::now();
+        trukme2 = duration_cast<duration<double>>(pabaiga2 - pradzia2);
+
+        cout << "ManoVektorius uzpildymo laikas su "<< sz <<" elementu: " << fixed << setprecision(6) << trukme2.count() << " sekundziu" << endl;
+    }
+}
