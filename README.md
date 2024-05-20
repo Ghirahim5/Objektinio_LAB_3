@@ -611,3 +611,11 @@ Kybančių rodyklių: Kybantis rodyklė yra rodyklė, kuri rodo į atmintį, kur
 5.	reference at(size_type pos): Tai yra funkcija, kuri grąžina nuorodą į elementą, esantį nurodytoje pozicijoje pos. Jei pozicija yra už vektoriaus ribų, išmetama std::out_of_range išimtis.
 
 </details>
+
+<details>
+<summary>### "ManoVektorius" ir std::vector konteinerių spartos analizė ###</summary>
+<br>
+
+![image](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/5ab7b4ed-91fd-4db7-a4b6-73d056399ae9)
+
+</details>
