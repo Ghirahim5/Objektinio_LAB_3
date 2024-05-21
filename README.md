@@ -321,13 +321,13 @@ Trečias efektyviausias metodas tai realizacija naudojanti Listų antrąją stra
 <summary>### INSTALIACIJOS INSTRUKCIJOS ###</summary>
 <br>
 
-Pirma reikia pasirinkti vieną iš trijų versijų - Deque, List arba Vector ir atsisiųsti visus failus esančius pasirinktame aplanke.
+1. Atsidarykite SETUP aplanką (https://github.com/Ghirahim5/Objektinio_LAB_3/v3.0/SETUP)
 
-Tada sekite šio video instrukcijas norint sukurti .exe failą:
+2. Atsisųskite .msi abra .exe setup failą.
 
-https://www.youtube.com/watch?v=ccDPSF4V2N8
+3. Paleiskite atsisiųstą setup failą.
 
-Toliau arba atsisiųskite duomenų failus arba juos sugeneruokite naudodamiesi programoje realizuota funkcija.
+4. Toliau sekite intstrukcijas nurodomas setup faile.
 
 </details>
 
