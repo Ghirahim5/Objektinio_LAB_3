@@ -525,6 +525,12 @@ v1.5
 
 1. Realizuota abstrakti klasė Asmuo, klasė Studentas yra šios klasės išvestinė klasė.
 
+v2.0
+
+1. Sukurta projekto dokumentacija naudojant Doxygen (HTML ir TeX failai) ir siekiant sukurt šią dokumentaciją kode pridėti papildomi komentarai.
+2. Sukurti Unit testai pagal Google Test framework'ą.
+3. Papildytas README.md failas
+
 </details>
 
 <details>
