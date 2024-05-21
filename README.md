@@ -681,3 +681,11 @@ std::vector 10000k
 </details>
 
 </details>
+
+<details>
+<summary>### "ManoVektorius gtest rezultatai ###"</summary>
+<br>
+  
+![gtest](https://github.com/Ghirahim5/Objektinio_LAB_3/assets/147089390/356905f3-6b44-4947-a827-bbb8837c7c4e)
+
+</details>
