@@ -321,7 +321,7 @@ Trečias efektyviausias metodas tai realizacija naudojanti Listų antrąją stra
 <summary>### INSTALIACIJOS INSTRUKCIJOS ###</summary>
 <br>
 
-1. Atsidarykite SETUP aplanką (https://github.com/Ghirahim5/Objektinio_LAB_3/v3.0/SETUP)
+1. Atsidarykite SETUP aplanką (https://github.com/Ghirahim5/Objektinio_LAB_3/tree/v3.0/SETUP)
 
 2. Atsisųskite .msi abra .exe setup failą.
 
